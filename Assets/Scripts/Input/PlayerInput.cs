@@ -15,6 +15,6 @@ public class PlayerInput : MonoBehaviour
 
     private void Update()
     {
-        _playerMovement.MoveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+        _playerMovement.MoveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0);
     }
 }
