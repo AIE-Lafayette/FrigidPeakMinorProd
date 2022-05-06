@@ -15,6 +15,14 @@ public class PlayerInput : MonoBehaviour
 
     private void Update()
     {
-        _playerMovement.MoveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0);
+        _playerMovement.MoveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+
+        if (Input.GetButton("Jump"))
+        {
+            if (!_playerMovement.IsGrounded)
+            {
+                _playerMovement.rigidbody.AddForce(_playerMovement.JumpHeight * _playerMovement.JumpForce, ForceMode.Impulse);
+            }
+        }
     }
 }

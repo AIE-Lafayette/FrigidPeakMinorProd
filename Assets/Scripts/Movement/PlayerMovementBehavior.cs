@@ -7,17 +7,31 @@ public class PlayerMovementBehavior : MonoBehaviour
     [SerializeField]
     private float _speed;
     private Rigidbody _rigidBody;
+
+    // Movement Vars
     private Vector3 _moveDir;
     private bool _canGoVertical;
 
+    //Jumping Vars
+    [SerializeField]
+    private float _jumpForce = 2.0f;
+    private Vector3 _jumpHeight;
+    private bool _isGrounded;
+
+    public Rigidbody rigidbody { get { return _rigidBody; } }
     public Vector3 MoveDirection { get { return _moveDir; } set { _moveDir = value; } }
     public bool CanGoVertical { get { return _canGoVertical; } set { _canGoVertical = value; } }
+
+    public float JumpForce { get { return _jumpForce; } }
+    public Vector3 JumpHeight { get { return _jumpHeight; } }
+    public bool IsGrounded { get { return _isGrounded; } }
 
     private void Awake()
     {
         //Get the rigidbody component
         _rigidBody = GetComponent<Rigidbody>();
         _canGoVertical = false;
+        _jumpHeight = new Vector3(0.0f, 0.5f);
     }
 
     private void FixedUpdate()
