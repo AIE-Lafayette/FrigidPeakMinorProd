@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class SnowballMovementBehavior : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private Vector2 _velocity;
 
-    // Update is called once per frame
-    void Update()
+    private Vector2 Velocity
     {
-        
+        get { return _velocity; }
+        set { _velocity = value; }
     }
 }
