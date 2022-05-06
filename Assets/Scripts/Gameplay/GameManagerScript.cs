@@ -18,11 +18,24 @@ public class GameManagerScript : MonoBehaviour
     static public float CurrentGameTimer { get { return _currentGameTimer; } }
     static public float GameScore { get { return _gameScore; } set { _gameScore = value; } }
 
-    private void Update()
+    private void Start()
     {
-        _currentGameTimer += Time.deltaTime;
-
-        _gameTimer.text = _currentGameTimer.ToString();
+        _currentGameTimer += 1 + Time.deltaTime; 
     }
 
+    private void Update()
+    {
+        TimeClock();
+    }
+
+
+    private void TimeClock()
+    {    
+        float milaSeconds = Mathf.FloorToInt(_currentGameTimer % 60);
+        float seconds = Mathf.FloorToInt(_currentGameTimer / 60);
+        float min = Mathf.FloorToInt(seconds / 60);
+        string timer = string.Format("{0:00}:{1:00}" , min, seconds);
+        _gameTimer.text = timer;
+    }
 }
+
