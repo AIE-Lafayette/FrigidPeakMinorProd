@@ -11,4 +11,9 @@ public class SnowballMovementBehavior : MonoBehaviour
         get { return _velocity; }
         set { _velocity = value; }
     }
+
+    private void Update()
+    {
+        
+    }
 }
