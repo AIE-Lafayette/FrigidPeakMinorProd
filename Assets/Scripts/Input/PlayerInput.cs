@@ -19,7 +19,7 @@ public class PlayerInput : MonoBehaviour
 
         if (Input.GetButton("Jump"))
         {
-            if (!_playerMovement.IsGrounded)
+            if (_playerMovement.IsGrounded)
             {
                 _playerMovement.rigidbody.AddForce(_playerMovement.JumpHeight * _playerMovement.JumpForce, ForceMode.Impulse);
             }

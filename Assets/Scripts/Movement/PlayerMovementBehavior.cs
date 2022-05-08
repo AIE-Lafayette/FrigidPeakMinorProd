@@ -24,7 +24,7 @@ public class PlayerMovementBehavior : MonoBehaviour
 
     public float JumpForce { get { return _jumpForce; } }
     public Vector3 JumpHeight { get { return _jumpHeight; } }
-    public bool IsGrounded { get { return _isGrounded; } }
+    public bool IsGrounded { get { return _isGrounded; } set { _isGrounded = value; } }
 
     private void Awake()
     {
@@ -48,5 +48,31 @@ public class PlayerMovementBehavior : MonoBehaviour
 
         // Move The position of the rigidbody
         _rigidBody.MovePosition(transform.position + velocity);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        // If the collider has the tag ground
+        if (collision.gameObject.CompareTag("ground"))
+        {
+            //Set isGrounded to true
+            _isGrounded = true;
+        }
+
+        // If the collider has the tag snowball 
+        if (collision.gameObject.CompareTag("snowball"))
+        {
+            //Lose a life
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        // If the collider has the tag ground
+        if (collision.gameObject.CompareTag("ground"))
+        {
+            //Set isGrounded to true
+            _isGrounded = false;
+        }
     }
 }
