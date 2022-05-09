@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 3476575189195313536}
   - component: {fileID: 3476575189195313543}
   m_Layer: 5
-  m_Name: Collectable
+  m_Name: Timer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -234,7 +234,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Collectable
+  m_Text: 0:00
 --- !u!1 &3476575189383714268
 GameObject:
   m_ObjectHideFlags: 0

@@ -23,6 +23,5 @@ public class UpgradeSpawnBehaviour : MonoBehaviour
             _spawnTimer = 0;
         }
         _spawnTimer += Time.deltaTime;
-
     }
 }
