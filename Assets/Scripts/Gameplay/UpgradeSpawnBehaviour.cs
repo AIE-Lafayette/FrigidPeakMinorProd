@@ -17,7 +17,6 @@ public class UpgradeSpawnBehaviour : MonoBehaviour
     void Update()
     {
         //Creates clone of the game objects 
-
         if (_spawnTimer >= _cooldown)
         {
             Instantiate(_upgrades, transform.position , Quaternion.identity);
