@@ -14,7 +14,7 @@ public class GameManagerScript : MonoBehaviour
     //Tracks Player Current Lives 
     static public int CurrentLives { get { return _currentLives; } }
     //Tracks collectable collected 
-    static public int Collectables { get { return _collectables; } }
+    static public int CollectableCollected { get { return _collectables; } }
 
     static public float CurrentGameTimer { get { return _currentGameTimer; } }
     static public float GameScore { get { return _gameScore; } }
