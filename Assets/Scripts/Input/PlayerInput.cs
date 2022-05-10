@@ -1,28 +1,48 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerInput : MonoBehaviour
 {
     //Refrence to the PlayerMovement script
     private PlayerMovementBehavior _playerMovement;
+    private MenuInputBehavior _menuInput;
 
     private void Awake()
     {
         //Retrieve the movementbehavior script from the object
         _playerMovement = GetComponent<PlayerMovementBehavior>();
+
+        //Change the canvas to be the game manager once we put everything altogether
+        _menuInput = GameObject.Find("Canvas").GetComponent<MenuInputBehavior>();
     }
 
     private void Update()
     {
-        _playerMovement.MoveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-
-        if (Input.GetButton("Jump"))
+        // If the game is not paused
+        if (!_menuInput.IsPaused)
         {
-            if (_playerMovement.IsGrounded)
+            // Set the player move direction to a new vector 3
+            _playerMovement.MoveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+
+            //If the jump button is pressed..
+            if (Input.GetButtonDown("Jump"))
             {
-                _playerMovement.rigidbody.AddForce(_playerMovement.JumpHeight * _playerMovement.JumpForce, ForceMode.Impulse);
+                //if the player is grounded
+                if (_playerMovement.IsGrounded)
+                {
+                    // Add a force to push the player upward.
+                    _playerMovement.rigidbody.AddForce(_playerMovement.JumpHeight * _playerMovement.JumpForce, ForceMode.Impulse);
+                }
             }
+        }
+
+        //If the cancel button is pressed
+        if (Input.GetButtonDown("Cancel"))
+        {
+            //Call the showPauseMenu method in the menuInput Script.
+            _menuInput.ShowPauseMenu();
         }
     }
 }
