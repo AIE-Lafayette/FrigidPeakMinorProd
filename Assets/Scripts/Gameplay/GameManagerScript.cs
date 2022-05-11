@@ -37,6 +37,7 @@ public class GameManagerScript : MonoBehaviour
     {
         _currentGameTimer += Time.deltaTime;
         TimeClock(_currentGameTimer);
+        _gameScoreTest.text = GameScore.ToString();
     }
 
     /// <summary>
