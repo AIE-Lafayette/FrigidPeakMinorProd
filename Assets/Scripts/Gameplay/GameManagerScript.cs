@@ -35,20 +35,19 @@ public class GameManagerScript : MonoBehaviour
     //Updates Once Per Frame 
     private void Update()
     {
-        TimeClock();
-        _gameScoreTest.text = GameScore.ToString();
-
+        _currentGameTimer += Time.deltaTime;
+        TimeClock(_currentGameTimer);
     }
 
     /// <summary>
     /// Collects time On  every update Thne displays it like a time clock 
     /// </summary>
-    private void TimeClock()
+    private void TimeClock(float timeToDisplay)
     {
-        _currentGameTimer += 1 + Time.deltaTime;
-        float milaSeconds = Mathf.FloorToInt(_currentGameTimer / 60);
-        float seconds = Mathf.FloorToInt(milaSeconds % 60);
-        float min = Mathf.FloorToInt(milaSeconds / 60);
+        timeToDisplay += 1;
+        float min = Mathf.FloorToInt(timeToDisplay / 60);
+        float seconds = Mathf.FloorToInt(timeToDisplay % 60);
+        
         string timer = string.Format("{0:00}:{1:00}", min, seconds);
         _gameTimer.text = timer;
     }
