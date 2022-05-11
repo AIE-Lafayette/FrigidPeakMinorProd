@@ -25,17 +25,6 @@ public class PlayerInput : MonoBehaviour
         {
             // Set the player move direction to a new vector 3
             _playerMovement.MoveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-
-            //If the jump button is pressed..
-            if (Input.GetButtonDown("Jump"))
-            {
-                //if the player is grounded
-                if (_playerMovement.IsGrounded)
-                {
-                    // Add a force to push the player upward.
-                    _playerMovement.rigidbody.AddForce(_playerMovement.JumpHeight * _playerMovement.JumpForce, ForceMode.Impulse);
-                }
-            }
         }
 
         //If the cancel button is pressed
