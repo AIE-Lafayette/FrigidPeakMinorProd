@@ -14,6 +14,7 @@ public class RopeBehavior : MonoBehaviour
             _playerMovement = other.GetComponent<PlayerMovementBehavior>();
             _playerMovement.CanGoVertical = true;
             _playerMovement.IsOnRope = true;
+            _playerMovement.GetComponent<Rigidbody>().useGravity = false;
         }
     }
 
@@ -24,6 +25,7 @@ public class RopeBehavior : MonoBehaviour
             _playerMovement = other.GetComponent<PlayerMovementBehavior>();
             _playerMovement.CanGoVertical = false;
             _playerMovement.IsOnRope = false;
+            _playerMovement.GetComponent<Rigidbody>().useGravity = true;
         }
     }
 }
