@@ -10,6 +10,7 @@ TagManager:
   - Barrier
   - pickAxe_UG
   - Collectable
+  - Canvas
   layers:
   - Default
   - TransparentFX
