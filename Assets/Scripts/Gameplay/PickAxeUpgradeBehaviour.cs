@@ -22,6 +22,8 @@ public class PickAxeUpgradeBehaviour : MonoBehaviour
     private void IncreasePlayerMovemnet()
     {
         if(_movement)
-            _movement.
+        {
+
+        }
     } 
 }
