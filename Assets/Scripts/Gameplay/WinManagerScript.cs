@@ -7,6 +7,8 @@ public class WinManagerScript : MonoBehaviour
 {
     [SerializeField]
     private Text _winText; //The win Text
+    [SerializeField]
+    private Text _loseText;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -14,6 +16,14 @@ public class WinManagerScript : MonoBehaviour
         if (collision.gameObject.tag == "player")
         {
             _winText.text = "YOU WIN";
+        }
+    }
+
+    private void Update()
+    {
+        if (GameManagerScript.CurrentLives <= 0)
+        {
+            _loseText.text = "GAME OVER";
         }
     }
 }

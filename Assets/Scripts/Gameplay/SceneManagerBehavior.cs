@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagerBehavior : MonoBehaviour
 {
-    public void RestartLevel()
+    public static void RestartLevel()
     {
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name);
