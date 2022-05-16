@@ -401,7 +401,7 @@ GameObject:
   - component: {fileID: 536460484}
   - component: {fileID: 536460483}
   m_Layer: 5
-  m_Name: TestUI
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
