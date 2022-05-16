@@ -7,6 +7,9 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField]
     private Text _gameTimer;
 
+    [SerializeField]
+    private Text _gameScoreTest;
+
     static private int _currentLives = 3;
     static private int _collectables = 0;
     static private float _currentGameTimer = 0;
@@ -34,6 +37,7 @@ public class GameManagerScript : MonoBehaviour
     {
         _currentGameTimer += Time.deltaTime;
         TimeClock(_currentGameTimer);
+        _gameScoreTest.text = GameScore.ToString();
     }
 
     /// <summary>
