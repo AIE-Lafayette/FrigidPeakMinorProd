@@ -18,7 +18,7 @@ public class GameManagerScript : MonoBehaviour
     /// <summary>
     /// Tracks Player Current Lives 
     /// </summary>
-    static public int CurrentLives { get { return _currentLives; } }
+    static public int CurrentLives { get { return _currentLives; } set { _currentLives = value; } }
     /// <summary>
     /// Tracks collectable collected 
     /// </summary>
