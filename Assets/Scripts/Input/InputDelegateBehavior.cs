@@ -7,11 +7,13 @@ public class InputDelegateBehavior : MonoBehaviour
 {
     private PlayerControls _playerControls;
     private PlayerMovementBehavior _playerMovement;
+    private MenuInputBehavior _menuBehavior;
 
     private void Awake()
     {
         _playerControls = new PlayerControls();
         _playerMovement = GetComponent<PlayerMovementBehavior>();
+        _menuBehavior = GameObject.Find("Canvas").GetComponent<MenuInputBehavior>();
     }
 
     private void OnEnable()
@@ -27,6 +29,7 @@ public class InputDelegateBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _playerControls.MenuControls.PauseMenu.performed += context => _menuBehavior.ShowPauseMenu();
         _playerControls.Player.Jump.performed += context => _playerMovement.Jump();
     }
 

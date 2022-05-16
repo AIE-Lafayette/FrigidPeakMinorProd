@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class MenuInputBehavior : MonoBehaviour
@@ -31,17 +32,17 @@ public class MenuInputBehavior : MonoBehaviour
     {
         if (!_onMainMenu)
         {
-            if (!_pauseMenuShown)
+            if (!_pauseMenu.activeInHierarchy)
             {
                 _pauseMenu.SetActive(true);
-                _pauseMenuShown = true;
-                IsPaused = true;
+                Time.timeScale = 0;
+                InputSystem.settings.updateMode = InputSettings.UpdateMode.ProcessEventsInDynamicUpdate;
             }
             else
             {
                 _pauseMenu.SetActive(false);
-                _pauseMenuShown = false;
-                IsPaused = false;
+                Time.timeScale = 1;
+                InputSystem.settings.updateMode = InputSettings.UpdateMode.ProcessEventsInFixedUpdate;
             }
         }
     }
