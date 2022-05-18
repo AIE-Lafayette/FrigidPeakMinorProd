@@ -13,7 +13,7 @@ public class InputDelegateBehavior : MonoBehaviour
     {
         _playerControls = new PlayerControls();
         _playerMovement = GetComponent<PlayerMovementBehavior>();
-        _menuBehavior = GameObject.Find("Canvas").GetComponent<MenuInputBehavior>();
+        _menuBehavior = GameObject.FindWithTag("Canvas").GetComponent<MenuInputBehavior>();
     }
 
     private void OnEnable()
