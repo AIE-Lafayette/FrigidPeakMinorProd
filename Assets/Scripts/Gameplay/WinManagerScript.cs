@@ -8,8 +8,6 @@ public class WinManagerScript : MonoBehaviour
 {
     [SerializeField]
     private TextMeshProUGUI _winText; //The win Text
-    [SerializeField]
-    private TextMeshProUGUI _loseText;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -24,7 +22,7 @@ public class WinManagerScript : MonoBehaviour
     {
         if (GameManagerScript.CurrentLives <= 0)
         {
-            _loseText.text = "GAME OVER";
+           _winText.text = "GAME OVER";
         }
     }
 }
