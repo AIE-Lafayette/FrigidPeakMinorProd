@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class WinManagerScript : MonoBehaviour
 {
     [SerializeField]
-    private Text _winText; //The win Text
-    [SerializeField]
-    private Text _loseText;
+    private TextMeshProUGUI _winText; //The win Text
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -23,7 +22,7 @@ public class WinManagerScript : MonoBehaviour
     {
         if (GameManagerScript.CurrentLives <= 0)
         {
-            _loseText.text = "GAME OVER";
+           _winText.text = "GAME OVER";
         }
     }
 }
