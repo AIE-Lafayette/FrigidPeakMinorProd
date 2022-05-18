@@ -10,6 +10,7 @@ public class MenuInputBehavior : MonoBehaviour
     [SerializeField]
     private bool _onMainMenu = false;
 
+
     // Pause Menu
     [SerializeField]
     private GameObject _pauseMenu;
@@ -20,7 +21,7 @@ public class MenuInputBehavior : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("FirstBuildScene");
     }
 
     public void QuitGame()
