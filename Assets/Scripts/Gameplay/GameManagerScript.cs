@@ -1,14 +1,15 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameManagerScript : MonoBehaviour
 {
 
     [SerializeField]
-    private Text _gameTimer;
+    private TextMeshProUGUI _gameTimer;
 
     [SerializeField]
-    private Text _gameScoreTest;
+    private TextMeshProUGUI _gameScoreTest;
 
     static private int _currentLives = 3;
     static private int _collectables = 0;
