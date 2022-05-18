@@ -5,11 +5,11 @@ using UnityEngine;
 public class UpgradeRotationBehaviour : MonoBehaviour
 {
     [SerializeField]
-    float _speed = 200;
+    float _speed = 10;
     // Update is called once per frame
     void Update()
     {
         //Changes the rotation of the gameobjects transform 
-        transform.Rotate(0, Mathf.Sin(Time.deltaTime * _speed * 3), Mathf.Tan(Time.deltaTime * _speed) * 3);
+        transform.Rotate(0, (Time.deltaTime * _speed * 3), 0);
     }
 }

@@ -7,8 +7,8 @@ public class InvincabilityBehaviour : MonoBehaviour
     private MeshRenderer _mashRender;
     private Color _color;
 
-    private PlayerMovementBehavior _movement;
-    private float _startingSpeed;
+    //private PlayerMovementBehavior _movement;
+    //private float _startingSpeed;
 
     private RoutineBehaviour.TimedAction _routune;
 
@@ -21,9 +21,9 @@ public class InvincabilityBehaviour : MonoBehaviour
     void Start()
     {
         _mashRender = GetComponent<MeshRenderer>();
-        _movement = GetComponent<PlayerMovementBehavior>();
+        //_movement = GetComponent<PlayerMovementBehavior>();
 
-        _startingSpeed = _movement.Speed;
+        //_startingSpeed = _movement.Speed;
         _color = _mashRender.material.color;
         
     }
@@ -41,7 +41,7 @@ public class InvincabilityBehaviour : MonoBehaviour
         _mashRender.material.color = _color;
         Debug.Log("Aactive");
 
-        _movement.Speed = _startingSpeed * _speedMultiplyer;
+        //_movement.Speed = _startingSpeed * _speedMultiplyer;
         _routune = RoutineBehaviour.Instance.StartNewTimedAction(args => RemoveInurability(), TimedActionCountType.SCALEDTIME, 7f);
     }
 
@@ -51,6 +51,6 @@ public class InvincabilityBehaviour : MonoBehaviour
         Physics.IgnoreLayerCollision(6, 8, false);
         _color.a = 1;
         _mashRender.material.color = _color;
-        _movement.Speed = _startingSpeed;
+        //_movement.Speed = _startingSpeed;
     }
 }

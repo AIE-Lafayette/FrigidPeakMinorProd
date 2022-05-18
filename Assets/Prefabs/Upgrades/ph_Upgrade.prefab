@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 721863360162694384}
   - component: {fileID: 721863360162694385}
   - component: {fileID: 721863360162694386}
-  - component: {fileID: 721863360162694387}
   - component: {fileID: 9023308390819878722}
+  - component: {fileID: 3842271960990833779}
+  - component: {fileID: 7168844919776816614}
   m_Layer: 0
   m_Name: ph_Upgrade
   m_TagString: Collectable
@@ -99,19 +100,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &721863360162694387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 721863360162694380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18585628a71cf8d4094fad0806e2d34e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 200
 --- !u!114 &9023308390819878722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,6 +113,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pointsWorth: 0
+--- !u!114 &3842271960990833779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721863360162694380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ca069fe703d064d81fe803310d2a02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frequency: 1
+  _magnitude: 1
+--- !u!114 &7168844919776816614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721863360162694380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18585628a71cf8d4094fad0806e2d34e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 10
 --- !u!1 &721863360721112760
 GameObject:
   m_ObjectHideFlags: 0
