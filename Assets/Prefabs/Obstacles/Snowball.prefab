@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 7383020274832872914}
   - component: {fileID: -2269626534313640405}
   - component: {fileID: -534054373178932615}
+  - component: {fileID: 1686489049719393336}
   m_Layer: 0
   m_Name: Snowball
-  m_TagString: Untagged
+  m_TagString: snowball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -111,7 +112,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 8
   m_CollisionDetection: 0
 --- !u!114 &-534054373178932615
 MonoBehaviour:
@@ -125,4 +126,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdea5b8249ad2ca45a30e01bd9023f53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lifetime: 120
+  _lifetime: 20
+--- !u!114 &1686489049719393336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627672293855352738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be2622a037b433c458ee89074399e041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 5
+  _moveDirection: {x: -1, y: 0, z: 0}
