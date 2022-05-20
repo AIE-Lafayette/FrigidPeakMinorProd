@@ -572,10 +572,6 @@ PrefabInstance:
       propertyPath: _speed
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 1186651121773677579, guid: e63bc9498d89b46469a7f25fd95e66c2, type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1186651121773677620, guid: e63bc9498d89b46469a7f25fd95e66c2, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1113,23 +1109,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 493411089}
   m_CullTransparentMesh: 1
---- !u!1 &501157092 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1186651121773677620, guid: e63bc9498d89b46469a7f25fd95e66c2, type: 3}
-  m_PrefabInstance: {fileID: 231614379}
-  m_PrefabAsset: {fileID: 0}
---- !u!75 &501157103
-ConstantForce:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 501157092}
-  m_Enabled: 1
-  m_Force: {x: 0, y: 0, z: 0}
-  m_RelativeForce: {x: 0, y: -9.81, z: 0}
-  m_Torque: {x: 0, y: 0, z: 0}
-  m_RelativeTorque: {x: 0, y: 0, z: 0}
 --- !u!1 &528970050
 GameObject:
   m_ObjectHideFlags: 0
