@@ -10,4 +10,15 @@ public class SceneManagerBehavior : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name);
     }
+
+    public void CloseGame()
+    {
+        Application.Quit();
+    }
+
+    public void RestartGame()
+    {
+        GameManagerScript.CurrentLives = 3;
+        SceneManager.LoadScene("StartScreen");
+    }
 }
