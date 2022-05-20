@@ -7,14 +7,14 @@ using TMPro;
 public class WinManagerScript : MonoBehaviour
 {
     [SerializeField]
-    private TextMeshProUGUI _winText; //The win Text
+    private GameObject _winScreen; //The win Text
 
     private void OnCollisionEnter(Collision collision)
     {
         //On collision with the player display the win text
         if (collision.gameObject.tag == "player")
         {
-            _winText.text = "YOU WIN";
+            _winScreen.SetActive(true);
         }
     }
 
@@ -22,7 +22,7 @@ public class WinManagerScript : MonoBehaviour
     {
         if (GameManagerScript.CurrentLives <= 0)
         {
-           _winText.text = "GAME OVER";
+            _winScreen.SetActive(true);
         }
     }
 }
