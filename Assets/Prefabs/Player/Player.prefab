@@ -11,10 +11,13 @@ GameObject:
   - component: {fileID: 1186651121773677576}
   - component: {fileID: 1186651121773677577}
   - component: {fileID: 1186651121773677622}
-  - component: {fileID: 1186651121773677623}
   - component: {fileID: 1186651121773677579}
-  - component: {fileID: 1186651121773677581}
+  - component: {fileID: 8775402010242895906}
+  - component: {fileID: 4369249094774140552}
   - component: {fileID: 1186651121773677578}
+  - component: {fileID: 6254570855963095415}
+  - component: {fileID: 776971063661860315}
+  - component: {fileID: 8200248708671349252}
   m_Layer: 0
   m_Name: Player
   m_TagString: player
@@ -85,20 +88,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &1186651121773677623
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1186651121773677620}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1186651121773677579
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -113,9 +102,23 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 120
   m_CollisionDetection: 0
---- !u!114 &1186651121773677581
+--- !u!136 &8775402010242895906
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186651121773677620}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4369249094774140552
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,9 +127,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1186651121773677620}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f51a5e312feeba84d85fe21963a6c3c8, type: 3}
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: ac309117b1a431a489053d3d36a28899, type: 3}
+  m_NotificationBehavior: 3
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!114 &1186651121773677578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,4 +161,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 10
-  _jumpForce: 4
+  _jumpForce: 10
+--- !u!114 &6254570855963095415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186651121773677620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3839f865a480a3941b1b43d8cc0ef122, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &776971063661860315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186651121773677620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d7feba0677f384ba5b16423745e433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8200248708671349252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186651121773677620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26c4b0d3dd7a8a54b9e8e432efccdde8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _invincibleTime: 3
+  _speedMultiplyer: 2
