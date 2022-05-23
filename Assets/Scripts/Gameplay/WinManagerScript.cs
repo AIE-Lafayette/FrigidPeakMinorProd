@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class WinManagerScript : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class WinManagerScript : MonoBehaviour
         if (collision.gameObject.tag == "player")
         {
             _winScreen.SetActive(true);
+            Time.timeScale = 0;
+            InputSystem.settings.updateMode = InputSettings.UpdateMode.ProcessEventsInDynamicUpdate;
         }
     }
 
@@ -23,6 +26,8 @@ public class WinManagerScript : MonoBehaviour
         if (GameManagerScript.CurrentLives <= 0)
         {
             _winScreen.SetActive(true);
+            Time.timeScale = 0;
+            InputSystem.settings.updateMode = InputSettings.UpdateMode.ProcessEventsInDynamicUpdate;
         }
     }
 }
