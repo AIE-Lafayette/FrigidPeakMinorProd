@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 6254570855963095415}
   - component: {fileID: 776971063661860315}
   - component: {fileID: 8200248708671349252}
+  - component: {fileID: -1254493548986449185}
   m_Layer: 0
   m_Name: Player
   m_TagString: player
@@ -200,3 +201,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _invincibleTime: 3
   _speedMultiplyer: 2
+--- !u!75 &-1254493548986449185
+ConstantForce:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186651121773677620}
+  m_Enabled: 1
+  m_Force: {x: 0, y: 0, z: 0}
+  m_RelativeForce: {x: 0, y: -9.811, z: 0}
+  m_Torque: {x: 0, y: 0, z: 0}
+  m_RelativeTorque: {x: 0, y: 0, z: 0}
