@@ -26,6 +26,7 @@ public class MenuInputBehavior : MonoBehaviour
 
     public void QuitGame()
     {
+        Debug.Log("Application Stopped");
         Application.Quit();
     }
 
