@@ -7,8 +7,6 @@ public class PlayerMovementBehavior : MonoBehaviour
     [SerializeField]
     private float _speed;
     private Rigidbody _rigidBody;
-    private Vector3 _startingPos;
-    private ConstantForce _constantForce;
 
     // Movement Vars
     private Vector3 _velocity;
@@ -22,7 +20,6 @@ public class PlayerMovementBehavior : MonoBehaviour
     private Vector3 _jumpHeight;
     private bool _isGrounded;
 
-    public ConstantForce ConstantForce { get { return _constantForce; } }
     public float Speed { get { return _speed; } set { _speed = value; } }
     public bool IsOnRope { get { return _isOnRope; } set { _isOnRope = value; } }
     public bool IsGrounded { get { return _isGrounded; } set { _isGrounded = value; } }
@@ -33,10 +30,8 @@ public class PlayerMovementBehavior : MonoBehaviour
     {
         //Get the rigidbody component
         _rigidBody = GetComponent<Rigidbody>();
-        _constantForce = GetComponent<ConstantForce>();
         _canGoVertical = false;
         _jumpHeight = new Vector3(0.0f, 0.5f);
-        _startingPos = transform.position;
     }
 
     public void Move()
@@ -78,15 +73,6 @@ public class PlayerMovementBehavior : MonoBehaviour
         {
             //Set isGrounded to true
             _isGrounded = true;
-        }
-
-        if (collision.gameObject.CompareTag("outOfBounds"))
-        {
-            //Set isGrounded to true
-            _isGrounded = true;
-
-            //set position to it's starting position
-            transform.position = _startingPos;
         }
     }
 
