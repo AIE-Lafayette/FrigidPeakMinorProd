@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 using TMPro;
 
 public class GameManagerScript : MonoBehaviour
@@ -10,6 +11,9 @@ public class GameManagerScript : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI _gameScoreTest;
+
+    [SerializeField]
+    static private Image _images;
 
     static private int _currentLives = 3;
     static private int _collectables = 0;
@@ -38,6 +42,8 @@ public class GameManagerScript : MonoBehaviour
     {
         _currentGameTimer += Time.deltaTime;
         TimeClock(_currentGameTimer);
+
+        //Updates the text to the game score
         _gameScoreTest.text = GameScore.ToString();
     }
 
@@ -51,6 +57,8 @@ public class GameManagerScript : MonoBehaviour
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
         
         string timer = string.Format("{0:00}:{1:00}", min, seconds);
+
+        //Updates the test to the timer
         _gameTimer.text = timer;
     }
 
@@ -79,4 +87,6 @@ public class GameManagerScript : MonoBehaviour
         _currentLives--;
     }
 }
+
+
 
