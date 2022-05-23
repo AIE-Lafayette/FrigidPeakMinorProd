@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class InvincabilityBehaviour : MonoBehaviour
 {
+    /// <summary>
+    /// Meant t
+    /// </summary>
     private MeshRenderer _mashRender;
     private Color _color;
 
@@ -41,7 +44,6 @@ public class InvincabilityBehaviour : MonoBehaviour
         _mashRender.material.color = _color;
         Debug.Log("Aactive");
 
-        _movement.Speed = _startingSpeed * _speedMultiplyer;
         _routune = RoutineBehaviour.Instance.StartNewTimedAction(args => RemoveInurability(), TimedActionCountType.SCALEDTIME, 7f);
     }
 
@@ -51,6 +53,5 @@ public class InvincabilityBehaviour : MonoBehaviour
         Physics.IgnoreLayerCollision(6, 8, false);
         _color.a = 1;
         _mashRender.material.color = _color;
-        _movement.Speed = _startingSpeed;
     }
 }
