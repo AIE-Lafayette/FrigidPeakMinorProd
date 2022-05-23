@@ -14,7 +14,7 @@ public class RopeBehavior : MonoBehaviour
             _playerMovement = other.GetComponent<PlayerMovementBehavior>();
             _playerMovement.CanGoVertical = true;
             _playerMovement.IsOnRope = true;
-            _playerMovement.GetComponent<Rigidbody>().isKinematic = true;
+            _playerMovement.ConstantForce.enabled = false;
         }
     }
 
@@ -25,7 +25,7 @@ public class RopeBehavior : MonoBehaviour
             _playerMovement = other.GetComponent<PlayerMovementBehavior>();
             _playerMovement.CanGoVertical = false;
             _playerMovement.IsOnRope = false;
-            _playerMovement.GetComponent<Rigidbody>().isKinematic = false;
+            _playerMovement.ConstantForce.enabled = true;
         }
     }
 }
