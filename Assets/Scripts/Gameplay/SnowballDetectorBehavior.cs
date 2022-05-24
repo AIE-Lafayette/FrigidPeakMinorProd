@@ -10,7 +10,7 @@ public class SnowballDetectorBehavior : MonoBehaviour
     private void Awake()
     {
         _rayDir = -transform.up * 100;
-        _detector = new Ray(transform.position, -transform.up * 100);
+        _detector = new Ray(transform.position, _rayDir);
     }
 
     private void FixedUpdate()
@@ -20,6 +20,7 @@ public class SnowballDetectorBehavior : MonoBehaviour
 
         if (hitData.collider.tag == "snowball")
         {
+            Debug.Log("There was a hit, score should increase");
             GameManagerScript.IncreaseScore();
         }
     }
