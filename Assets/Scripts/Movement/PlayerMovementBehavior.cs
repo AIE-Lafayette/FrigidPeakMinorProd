@@ -99,10 +99,4 @@ public class PlayerMovementBehavior : MonoBehaviour
             _isGrounded = false;
         }
     }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawRay(transform.position, transform.up);
-    }
 }
