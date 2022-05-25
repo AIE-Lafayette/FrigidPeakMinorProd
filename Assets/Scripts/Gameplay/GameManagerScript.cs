@@ -3,6 +3,14 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
 
+public enum PlayersLiveState
+{
+    THREELIVES,
+    TWOLIVES,
+    ONELIFE,
+    DEAD
+}
+
 public class GameManagerScript : MonoBehaviour
 {
 
@@ -13,9 +21,14 @@ public class GameManagerScript : MonoBehaviour
     private TextMeshProUGUI _gameScoreTest;
 
     [SerializeField]
-    static private Image _images;
+    private Image _life1;
+    [SerializeField]
+    private Image _life2;
+    [SerializeField]
+    private Image _life3;
 
-    static private int _currentLives = 3;
+
+    static private PlayersLiveState _currentLives = PlayersLiveState.THREELIVES;
     static private int _collectables = 0;
     static private float _currentGameTimer = 0;
     static private float _gameScore = 0;
@@ -23,19 +36,19 @@ public class GameManagerScript : MonoBehaviour
     /// <summary>
     /// Tracks Player Current Lives 
     /// </summary>
-    static public int CurrentLives { get { return _currentLives; } set { _currentLives = value; } }
+    static public PlayersLiveState CurrentLives { get =>_currentLives; }
     /// <summary>
     /// Tracks collectable collected 
     /// </summary>
-    static public int CollectableCollected { get { return _collectables; } }
+    static public int CollectableCollected { get => _collectables;}
     /// <summary>
     /// Data Collected by deltaTime
     /// </summary>
-    static public float CurrentGameTimer { get { return _currentGameTimer; } }
+    static public float CurrentGameTimer { get => _currentGameTimer;  }
     /// <summary>
     /// Access to the current game score current value 
     /// </summary>
-    static public float GameScore { get { return _gameScore; } }
+    static public float GameScore { get => _gameScore; }
 
     //Updates Once Per Frame 
     private void Update()
@@ -85,6 +98,22 @@ public class GameManagerScript : MonoBehaviour
     static public void LostALife()
     {
         _currentLives--;
+    }
+
+    private void LifeState()
+    {
+        switch (_currentLives)
+        {
+            case PlayersLiveState.THREELIVES:
+                break;
+            case PlayersLiveState.TWOLIVES:
+                break;
+            case PlayersLiveState.ONELIFE:
+                break;
+            case PlayersLiveState.DEAD:
+                break;
+        }
+
     }
 }
 
