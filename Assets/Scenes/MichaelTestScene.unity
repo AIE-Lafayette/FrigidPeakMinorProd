@@ -1306,7 +1306,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2111348387740321718, guid: 03a8c0f0c3a7cff45b1d6ed852d600b0, type: 3}
       propertyPath: _cooldown
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8293980397178713413, guid: 03a8c0f0c3a7cff45b1d6ed852d600b0, type: 3}
       propertyPath: m_Name
