@@ -69,6 +69,10 @@ public class PlayerMovementBehavior : MonoBehaviour
     {
         // Move The position of the rigidbody
         _rigidBody.MovePosition(transform.position + _velocity);
+
+        //Moves the players forward according to rotation
+        if (_velocity.magnitude > 0)
+            transform.forward = _velocity.normalized;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -98,5 +102,11 @@ public class PlayerMovementBehavior : MonoBehaviour
             //Set isGrounded to true
             _isGrounded = false;
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawRay(new Ray(transform.position, transform.forward));
     }
 }
