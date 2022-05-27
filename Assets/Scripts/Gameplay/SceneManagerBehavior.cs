@@ -28,7 +28,7 @@ public class SceneManagerBehavior : MonoBehaviour
     /// </summary>
     public void RestartGame()
     {
-        GameManagerScript.CurrentLives = 3; //Resets the player's lives to 3
+        //GameManagerScript.CurrentLives = 3; //Resets the player's lives to 3
         //SceneManager.LoadScene("StartScreen"); //Loads the start screen
         SceneManager.LoadScene("MichaelTestScene");
         Time.timeScale = 1; //Resets the time scale

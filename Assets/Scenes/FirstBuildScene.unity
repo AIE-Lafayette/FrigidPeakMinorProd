@@ -1828,10 +1828,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4851494240083749637, guid: 77245c3b3f3bb504597f751a10e74ec3, type: 3}
+      propertyPath: m_TagString
+      value: outOfBounds
+      objectReference: {fileID: 0}
     - target: {fileID: 4851494241027591779, guid: 77245c3b3f3bb504597f751a10e74ec3, type: 3}
       propertyPath: _winText
       value: 
       objectReference: {fileID: 1329642471}
+    - target: {fileID: 4851494241249086195, guid: 77245c3b3f3bb504597f751a10e74ec3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5301815298198323579, guid: 77245c3b3f3bb504597f751a10e74ec3, type: 3}
       propertyPath: m_Name
       value: Envierment
