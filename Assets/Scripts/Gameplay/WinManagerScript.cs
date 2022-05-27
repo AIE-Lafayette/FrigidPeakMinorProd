@@ -23,7 +23,7 @@ public class WinManagerScript : MonoBehaviour
 
     private void Update()
     {
-        if (GameManagerScript.CurrentLives == PlayersLiveState.DEAD) //If the player lives are zero
+        if (!GameManagerScript.IsAlive) //If the player lives are zero
         {
             _winScreen.SetActive(true); //Set win screen to active
             Time.timeScale = 0; //Set time scale to zero
