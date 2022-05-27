@@ -5,10 +5,10 @@ using TMPro;
 
 public enum PlayersLiveState
 {
-    THREELIVES,
-    TWOLIVES,
+    DEAD,
     ONELIFE,
-    DEAD
+    TWOLIVES,
+    THREELIVES
 }
 
 public class GameManagerScript : MonoBehaviour
@@ -53,6 +53,8 @@ public class GameManagerScript : MonoBehaviour
     //Updates Once Per Frame 
     private void Update()
     {
+        LifeState();
+
         _currentGameTimer += Time.deltaTime;
         TimeClock(_currentGameTimer);
 
@@ -105,12 +107,24 @@ public class GameManagerScript : MonoBehaviour
         switch (_currentLives)
         {
             case PlayersLiveState.THREELIVES:
+                _life1.enabled = true;
+                _life2.enabled = true;
+                _life3.enabled = true;
                 break;
             case PlayersLiveState.TWOLIVES:
+                _life1.enabled = true;
+                _life2.enabled = true;
+                _life3.enabled = false;
                 break;
             case PlayersLiveState.ONELIFE:
+                _life1.enabled = true;
+                _life2.enabled = false;
+                _life3.enabled = false;
                 break;
             case PlayersLiveState.DEAD:
+                _life1.enabled = false;
+                _life2.enabled = false;
+                _life3.enabled = false;
                 break;
         }
 

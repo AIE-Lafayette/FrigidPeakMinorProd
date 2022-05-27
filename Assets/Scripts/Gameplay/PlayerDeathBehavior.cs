@@ -8,8 +8,9 @@ public class PlayerDeathBehavior : MonoBehaviour
     {
         if (collision.gameObject.tag == "snowball") //On collision with a snowball
         {
-            //GameManagerScript.CurrentLives--; //Decrement player lives
-            SceneManagerBehavior.RestartLevel(); //Restart the level
+            GameManagerScript.LostALife(); //Decrement player lives
+            SceneManagerBehavior.RestartLevel(); //Restart the levels
+            
         }
     }
 }
