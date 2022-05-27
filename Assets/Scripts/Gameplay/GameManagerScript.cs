@@ -1,6 +1,15 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 using TMPro;
+
+public enum PlayersLiveState
+{
+    DEAD,
+    ONELIFE,
+    TWOLIVES,
+    THREELIVES
+}
 
 public class GameManagerScript : MonoBehaviour
 {
@@ -11,33 +20,50 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI _gameScoreTest;
 
-    static private int _currentLives = 3;
+    [SerializeField]
+    private Image _life1;
+    [SerializeField]
+    private Image _life2;
+    [SerializeField]
+    private Image _life3;
+
+
+    static private PlayersLiveState _currentLives = PlayersLiveState.TWOLIVES;
     static private int _collectables = 0;
     static private float _currentGameTimer = 0;
     static private float _gameScore = 0;
 
+    static bool _isAlive = true;
+
     /// <summary>
     /// Tracks Player Current Lives 
     /// </summary>
-    static public int CurrentLives { get { return _currentLives; } set { _currentLives = value; } }
+    static public PlayersLiveState CurrentLives { get => _currentLives; }
     /// <summary>
     /// Tracks collectable collected 
     /// </summary>
-    static public int CollectableCollected { get { return _collectables; } }
+    static public int CollectableCollected { get => _collectables; }
     /// <summary>
     /// Data Collected by deltaTime
     /// </summary>
-    static public float CurrentGameTimer { get { return _currentGameTimer; } }
+    static public float CurrentGameTimer { get => _currentGameTimer; }
     /// <summary>
     /// Access to the current game score current value 
     /// </summary>
-    static public float GameScore { get { return _gameScore; } }
+    static public float GameScore { get => _gameScore; }
+
+    //Plyer death State
+    static public bool  IsAlive { get => _isAlive; }
 
     //Updates Once Per Frame 
     private void Update()
     {
+        LifeState();
+
         _currentGameTimer += Time.deltaTime;
         TimeClock(_currentGameTimer);
+
+        //Updates the text to the game score
         _gameScoreTest.text = GameScore.ToString();
     }
 
@@ -51,6 +77,8 @@ public class GameManagerScript : MonoBehaviour
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
         
         string timer = string.Format("{0:00}:{1:00}", min, seconds);
+
+        //Updates the test to the timer
         _gameTimer.text = timer;
     }
 
@@ -78,5 +106,36 @@ public class GameManagerScript : MonoBehaviour
     {
         _currentLives--;
     }
+
+    private void LifeState()
+    {
+        switch (_currentLives)
+        {
+            case PlayersLiveState.THREELIVES:
+                _life1.enabled = true;
+                _life2.enabled = true;
+                _life3.enabled = true;
+                break;
+            case PlayersLiveState.TWOLIVES:
+                _life1.enabled = true;
+                _life2.enabled = true;
+                _life3.enabled = false;
+                break;
+            case PlayersLiveState.ONELIFE:
+                _life1.enabled = true;
+                _life2.enabled = false;
+                _life3.enabled = false;
+                break;
+            case PlayersLiveState.DEAD:
+                _life1.enabled = false;
+                _life2.enabled = false;
+                _life3.enabled = false;
+                _isAlive = false;
+                break;
+        }
+
+    }
 }
+
+
 

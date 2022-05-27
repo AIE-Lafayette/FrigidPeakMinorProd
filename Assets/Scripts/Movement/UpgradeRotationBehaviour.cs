@@ -10,6 +10,6 @@ public class UpgradeRotationBehaviour : MonoBehaviour
     void Update()
     {
         //Changes the rotation of the gameobjects transform 
-        transform.Rotate(0, Mathf.Sin(Time.deltaTime * _speed * 3), Mathf.Tan(Time.deltaTime * _speed) * 3);
+        transform.Rotate(0, Time.deltaTime * _speed, 0);
     }
 }
