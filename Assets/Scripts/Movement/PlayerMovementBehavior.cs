@@ -72,7 +72,9 @@ public class PlayerMovementBehavior : MonoBehaviour
 
         //Moves the players forward according to rotation
         if (_velocity.magnitude > 0)
-            transform.forward = _velocity.normalized;
+        {
+            transform.forward = new Vector3(_velocity.normalized.x, 0);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
