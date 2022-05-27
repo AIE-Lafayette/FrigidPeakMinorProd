@@ -28,27 +28,32 @@ public class GameManagerScript : MonoBehaviour
     private Image _life3;
 
 
-    static private PlayersLiveState _currentLives = PlayersLiveState.THREELIVES;
+    static private PlayersLiveState _currentLives = PlayersLiveState.TWOLIVES;
     static private int _collectables = 0;
     static private float _currentGameTimer = 0;
     static private float _gameScore = 0;
 
+    static bool _isAlive = true;
+
     /// <summary>
     /// Tracks Player Current Lives 
     /// </summary>
-    static public PlayersLiveState CurrentLives { get =>_currentLives; }
+    static public PlayersLiveState CurrentLives { get => _currentLives; }
     /// <summary>
     /// Tracks collectable collected 
     /// </summary>
-    static public int CollectableCollected { get => _collectables;}
+    static public int CollectableCollected { get => _collectables; }
     /// <summary>
     /// Data Collected by deltaTime
     /// </summary>
-    static public float CurrentGameTimer { get => _currentGameTimer;  }
+    static public float CurrentGameTimer { get => _currentGameTimer; }
     /// <summary>
     /// Access to the current game score current value 
     /// </summary>
     static public float GameScore { get => _gameScore; }
+
+    //Plyer death State
+    static public bool  IsAlive { get => _isAlive; }
 
     //Updates Once Per Frame 
     private void Update()
@@ -125,6 +130,7 @@ public class GameManagerScript : MonoBehaviour
                 _life1.enabled = false;
                 _life2.enabled = false;
                 _life3.enabled = false;
+                _isAlive = false;
                 break;
         }
 
