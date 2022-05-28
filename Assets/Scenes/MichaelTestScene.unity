@@ -468,22 +468,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FirstLevel
       objectReference: {fileID: 0}
-    - target: {fileID: 4392075223456220298, guid: 981880b036123dc4cb070a1c0ae784f5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 6.731
-      objectReference: {fileID: 0}
-    - target: {fileID: 5978233346154203001, guid: 981880b036123dc4cb070a1c0ae784f5, type: 3}
-      propertyPath: _speed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5978233346154203005, guid: 981880b036123dc4cb070a1c0ae784f5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5978233346154203005, guid: 981880b036123dc4cb070a1c0ae784f5, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.129
-      objectReference: {fileID: 0}
     - target: {fileID: 8152320185482175495, guid: 981880b036123dc4cb070a1c0ae784f5, type: 3}
       propertyPath: m_RootOrder
       value: 5
