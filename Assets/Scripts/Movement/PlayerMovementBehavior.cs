@@ -64,6 +64,12 @@ public class PlayerMovementBehavior : MonoBehaviour
     {
         // Move The position of the rigidbody
         _rigidBody.MovePosition(transform.position + _velocity);
+
+        //Moves the players forward according to rotation
+        if (_velocity.magnitude > 0)
+        {
+            transform.forward = new Vector3(_velocity.normalized.x, 0);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -86,9 +92,9 @@ public class PlayerMovementBehavior : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawRay(transform.position, transform.up);
+        Gizmos.DrawRay(new Ray(transform.position, transform.forward));
     }
 }
