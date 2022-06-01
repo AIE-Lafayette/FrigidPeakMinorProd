@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 7c3e2c3cabd1a7948ad8f6b35b25987d
+guid: 3da0e0e442db30b458179f3503816a37
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Mountain_pass2_Group20196Mat
-    second: {fileID: 2100000, guid: 5e181feee3e5b9844b6811abe13513b0, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
