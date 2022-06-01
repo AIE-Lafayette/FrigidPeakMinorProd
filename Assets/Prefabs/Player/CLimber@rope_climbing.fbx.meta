@@ -1,14 +1,12 @@
 fileFormatVersion: 2
-guid: 5c17d7fe2e9642b4a8a43ebbd3fa7131
+guid: 929af602dfa6c6243855240ec4e2e1e9
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable: []
-  externalObjects:
+  internalIDToNameTable:
   - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Character
-    second: {fileID: 2100000, guid: 2e7fa811525f56e4ea2a82b3e6fad1bb, type: 2}
+      74: 1827226128182048838
+    second: Take 001
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -77,11 +75,7 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips:
-  - 91ebc3fa2798aa14dbcdba25afe4d845
-  - ab09985c6e062bf4a93442198ef518ee
-  - 929af602dfa6c6243855240ec4e2e1e9
-  - 52b83dabbb1d2ce45b5fe15491f19bfd
+  referencedClips: []
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
@@ -103,7 +97,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 2
+  avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   additionalBone: 0
   userData: 
