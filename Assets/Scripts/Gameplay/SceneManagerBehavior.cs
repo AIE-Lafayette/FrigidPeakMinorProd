@@ -26,11 +26,11 @@ public class SceneManagerBehavior : MonoBehaviour
     /// <summary>
     /// Restarts the game 
     /// </summary>
-    public void RestartGame()
+    public void RestartGame(string sceneName)
     {
         //GameManagerScript.CurrentLives = 3; //Resets the player's lives to 3
         //SceneManager.LoadScene("StartScreen"); //Loads the start screen
-        SceneManager.LoadScene("MichaelTestScene");
+        SceneManager.LoadScene(sceneName);
         Time.timeScale = 1; //Resets the time scale
         InputSystem.settings.updateMode = InputSettings.UpdateMode.ProcessEventsInFixedUpdate; //Resets the update mode.
     }
