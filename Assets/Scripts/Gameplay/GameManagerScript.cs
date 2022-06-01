@@ -107,6 +107,16 @@ public class GameManagerScript : MonoBehaviour
         _currentLives--;
     }
 
+    static public void Reinitialize()
+    {
+        _currentLives = PlayersLiveState.THREELIVES;
+        _collectables = 0;
+        _currentGameTimer = 0;
+        _gameScore = 0;
+
+        _isAlive = true;
+    }
+
     private void LifeState()
     {
         switch (_currentLives)
