@@ -7,6 +7,7 @@ public class PlayerMovementBehavior : MonoBehaviour
     [SerializeField]
     private float _speed;
     private Rigidbody _rigidBody;
+    private Vector3 _originalPos;
 
     // Movement Vars
     private Vector3 _velocity;
@@ -32,6 +33,7 @@ public class PlayerMovementBehavior : MonoBehaviour
         _rigidBody = GetComponent<Rigidbody>();
         _canGoVertical = false;
         _jumpHeight = new Vector3(0.0f, 0.5f);
+        _originalPos = transform.position;
     }
 
     public void Move()
@@ -64,6 +66,12 @@ public class PlayerMovementBehavior : MonoBehaviour
     {
         // Move The position of the rigidbody
         _rigidBody.MovePosition(transform.position + _velocity);
+
+        //Moves the players forward according to rotation
+        if (_velocity.magnitude > 0)
+        {
+            transform.forward = new Vector3(_velocity.normalized.x, 0);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -73,6 +81,11 @@ public class PlayerMovementBehavior : MonoBehaviour
         {
             //Set isGrounded to true
             _isGrounded = true;
+        }
+        if (collision.gameObject.CompareTag("outOfBounds"))
+        {
+            _isGrounded = true;
+            transform.position = _originalPos;
         }
     }
 
@@ -84,5 +97,11 @@ public class PlayerMovementBehavior : MonoBehaviour
             //Set isGrounded to true
             _isGrounded = false;
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawRay(new Ray(transform.position, transform.forward));
     }
 }
