@@ -28,7 +28,7 @@ public class GameManagerScript : MonoBehaviour
     private Image _life3;
 
 
-    static private PlayersLiveState _currentLives = PlayersLiveState.TWOLIVES;
+    static private PlayersLiveState _currentLives = PlayersLiveState.THREELIVES;
     static private int _collectables = 0;
     static private float _currentGameTimer = 0;
     static private float _gameScore = 0;
