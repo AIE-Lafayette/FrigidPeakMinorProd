@@ -64,7 +64,7 @@ public class SnowballMovementBehavior : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "snowball")
+        if (collision.gameObject.tag == "snowball" || collision.gameObject.tag == "Collectable")
             Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
     }
 }

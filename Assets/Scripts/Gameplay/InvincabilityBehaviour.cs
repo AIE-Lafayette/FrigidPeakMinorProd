@@ -61,7 +61,5 @@ public class InvincabilityBehaviour : MonoBehaviour
         Physics.IgnoreLayerCollision(6, 8, false);
         _color.a = 1;
         _mashRender.material.color = _color;
-
-        GameManagerScript.LostALife();
     }
 }

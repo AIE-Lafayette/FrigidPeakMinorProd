@@ -7,6 +7,7 @@ public class PlayerMovementBehavior : MonoBehaviour
     [SerializeField]
     private float _speed;
     private Rigidbody _rigidBody;
+    private Vector3 _originalPos;
 
     // Movement Vars
     private Vector3 _velocity;
@@ -32,6 +33,7 @@ public class PlayerMovementBehavior : MonoBehaviour
         _rigidBody = GetComponent<Rigidbody>();
         _canGoVertical = false;
         _jumpHeight = new Vector3(0.0f, 0.5f);
+        _originalPos = transform.position;
     }
 
     public void Move()
@@ -79,6 +81,11 @@ public class PlayerMovementBehavior : MonoBehaviour
         {
             //Set isGrounded to true
             _isGrounded = true;
+        }
+        if (collision.gameObject.CompareTag("outOfBounds"))
+        {
+            _isGrounded = true;
+            transform.position = _originalPos;
         }
     }
 
