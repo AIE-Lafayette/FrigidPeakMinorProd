@@ -68,9 +68,15 @@ public class SnowballMovementBehavior : MonoBehaviour
         }
     }
 
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.tag == "snowball")
-    //        Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
-    //}
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "snowball")
+            Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
+    }
 }
+
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.tag == "snowball")
+    //        Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
+    //}

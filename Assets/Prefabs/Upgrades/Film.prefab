@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8870337238007663379}
   m_Layer: 7
   m_Name: Film
-  m_TagString: Untagged
+  m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
