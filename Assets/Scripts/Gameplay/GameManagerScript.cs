@@ -107,6 +107,9 @@ public class GameManagerScript : MonoBehaviour
         _currentLives--;
     }
 
+    /// <summary>
+    /// ReInizalizes the current values to be that of the defulted values
+    /// </summary>
     static public void Reinitialize()
     {
         _currentLives = PlayersLiveState.THREELIVES;

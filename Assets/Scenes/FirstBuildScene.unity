@@ -256,7 +256,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 15
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -282,7 +282,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 148372783}
   m_LocalRotation: {x: 0.13849135, y: -0, z: -0, w: 0.9903637}
-  m_LocalPosition: {x: 0, y: 23.5, z: -33}
+  m_LocalPosition: {x: 0, y: 38.4, z: -106.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1327,6 +1327,10 @@ PrefabInstance:
     - target: {fileID: 3953740208317000970, guid: 981880b036123dc4cb070a1c0ae784f5, type: 3}
       propertyPath: m_TagString
       value: outOfBounds
+      objectReference: {fileID: 0}
+    - target: {fileID: 3953740208317000974, guid: 981880b036123dc4cb070a1c0ae784f5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.7785
       objectReference: {fileID: 0}
     - target: {fileID: 3953740209252714604, guid: 981880b036123dc4cb070a1c0ae784f5, type: 3}
       propertyPath: _winScreen

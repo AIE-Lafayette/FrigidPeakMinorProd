@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 721863360162694386}
   - component: {fileID: 721863360162694387}
   - component: {fileID: 9023308390819878722}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ph_Upgrade
-  m_TagString: Collectable
+  m_TagString: PickAxeUpgrade
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135,7 +135,7 @@ GameObject:
   m_Component:
   - component: {fileID: 721863360721112767}
   - component: {fileID: 721863360721112766}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8860892104830687211}
   - component: {fileID: 5356137709831653376}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pickAxe_upGrade_collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
