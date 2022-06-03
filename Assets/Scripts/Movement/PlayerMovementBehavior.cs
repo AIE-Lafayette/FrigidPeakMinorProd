@@ -78,25 +78,16 @@ public class PlayerMovementBehavior : MonoBehaviour
     {
         // If the collider has the tag ground
         if (collision.gameObject.CompareTag("ground"))
-        {
             //Set isGrounded to true
             _isGrounded = true;
-        }
-        if (collision.gameObject.CompareTag("outOfBounds"))
-        {
-            _isGrounded = true;
-            transform.position = _originalPos;
-        }
     }
 
     private void OnCollisionExit(Collision collision)
     {
         // If the collider has the tag ground
         if (collision.gameObject.CompareTag("ground"))
-        {
-            //Set isGrounded to true
+            //Set isGrounded to false
             _isGrounded = false;
-        }
     }
 
     private void OnDrawGizmos()
