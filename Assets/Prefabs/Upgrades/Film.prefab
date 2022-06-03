@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 6975542971085812582}
   - component: {fileID: 5530084300740344967}
   - component: {fileID: 8870337238007663379}
+  - component: {fileID: 1035892143743788446}
+  - component: {fileID: -7415261262283468110}
   m_Layer: 7
   m_Name: Film
   m_TagString: Collectable
@@ -108,4 +110,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e58868503aa838441bc87dd9231d1c46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pointsWorth: 0
+  _pointsWorth: 300
+--- !u!114 &1035892143743788446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4622140945221954830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39cf6a3002e4885469192daca1c4af34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frequency: 1
+  _magnitude: 1
+--- !u!114 &-7415261262283468110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4622140945221954830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18585628a71cf8d4094fad0806e2d34e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 200
