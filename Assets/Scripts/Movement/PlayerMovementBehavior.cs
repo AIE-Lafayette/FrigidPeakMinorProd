@@ -6,6 +6,7 @@ public class PlayerMovementBehavior : MonoBehaviour
 {
     [SerializeField]
     private float _speed;
+    private ConstantForce _force;
     private Rigidbody _rigidBody;
     private Vector3 _originalPos;
 
@@ -21,6 +22,7 @@ public class PlayerMovementBehavior : MonoBehaviour
     private Vector3 _jumpHeight;
     private bool _isGrounded;
 
+    public ConstantForce Force { get { return _force; } private set { _force = value; } }
     public float Speed { get { return _speed; } set { _speed = value; } }
     public bool IsOnRope { get { return _isOnRope; } set { _isOnRope = value; } }
     public bool IsGrounded { get { return _isGrounded; } set { _isGrounded = value; } }
@@ -31,6 +33,7 @@ public class PlayerMovementBehavior : MonoBehaviour
     {
         //Get the rigidbody component
         _rigidBody = GetComponent<Rigidbody>();
+        Force = GetComponent<ConstantForce>();
         _canGoVertical = false;
         _jumpHeight = new Vector3(0.0f, 0.5f);
         _originalPos = transform.position;
