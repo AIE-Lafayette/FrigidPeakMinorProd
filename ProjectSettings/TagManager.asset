@@ -11,6 +11,8 @@ TagManager:
   - pickAxe_UG
   - Collectable
   - Canvas
+  - PickAxeUpgrade
+  - outOfBounds
   layers:
   - Default
   - TransparentFX
