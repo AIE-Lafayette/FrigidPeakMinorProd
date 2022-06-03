@@ -35,7 +35,7 @@ public class InvincabilityBehaviour : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.other.CompareTag("Collectable"))
+        if (collision.other.CompareTag("PickAxeUpgrade"))
             GetInvulnerability();
     }
 
