@@ -29,6 +29,12 @@ public class SnowballMovementBehavior : MonoBehaviour
         set { _velocity = value; }
     }
 
+    private void Awake()
+    {
+        Physics.IgnoreLayerCollision(8, 8, true);
+        Physics.IgnoreLayerCollision(8, 7, true);
+    }
+
     private void Update()
     {
         if (_isGrounded) //If the snowball is grounded
@@ -64,7 +70,13 @@ public class SnowballMovementBehavior : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "snowball" || collision.gameObject.tag == "Collectable")
+        if (collision.gameObject.tag == "snowball")
             Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
     }
 }
+
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.tag == "snowball")
+    //        Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
+    //}
