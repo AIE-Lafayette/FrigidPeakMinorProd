@@ -6,11 +6,10 @@ public class PlayerDeathBehavior : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "snowball") //On collision with a snowball
+        if (collision.gameObject.tag == "snowball" || collision.gameObject.CompareTag("outOfBounds")) //On collision with a snowball
         {
             GameManagerScript.LostALife(); //Decrement player lives
-            SceneManagerBehavior.RestartLevel(); //Restart the levels
-            
+            SceneManagerBehavior.RestartLevel(); //Restart the level
         }
     }
 }
