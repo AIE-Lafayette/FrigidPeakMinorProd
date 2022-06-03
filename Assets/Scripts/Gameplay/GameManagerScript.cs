@@ -28,7 +28,7 @@ public class GameManagerScript : MonoBehaviour
     private Image _life3;
 
 
-    static private PlayersLiveState _currentLives = PlayersLiveState.TWOLIVES;
+    static private PlayersLiveState _currentLives = PlayersLiveState.THREELIVES;
     static private int _collectables = 0;
     static private float _currentGameTimer = 0;
     static private float _gameScore = 0;
@@ -105,6 +105,16 @@ public class GameManagerScript : MonoBehaviour
     static public void LostALife()
     {
         _currentLives--;
+    }
+
+    static public void Reinitialize()
+    {
+        _currentLives = PlayersLiveState.THREELIVES;
+        _collectables = 0;
+        _currentGameTimer = 0;
+        _gameScore = 0;
+
+        _isAlive = true;
     }
 
     private void LifeState()
