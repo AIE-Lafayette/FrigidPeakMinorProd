@@ -7,9 +7,13 @@ public class SnowballMovementBehavior : MonoBehaviour
     [SerializeField]
     private float _speed;
     private Vector3 _velocity;
-    [SerializeField]
-    private Vector3 _moveDirection = Vector3.left; //The snowball's move direction defaults to left {-1, 0, 0}
+    private Vector3 _moveDirection; //The snowball's move direction defaults to left {-1, 0, 0}
     private bool _isGrounded;
+    [SerializeField]
+    private bool _movesLeft;
+    [SerializeField]
+    private bool _movesRight;
+
 
     /// <summary>
     /// The speed the snowball moves
@@ -29,18 +33,29 @@ public class SnowballMovementBehavior : MonoBehaviour
         set { _velocity = value; }
     }
 
+    public bool MovesLeft { get => _movesLeft; set => _movesLeft = value; }
+    public bool MovesRight { get => _movesRight; set => _movesRight = value; }
+
     private void Awake()
     {
         Physics.IgnoreLayerCollision(8, 8, true);
         Physics.IgnoreLayerCollision(8, 7, true);
     }
 
+    private void Start()
+    {
+        if (MovesLeft)
+            _moveDirection = Vector3.left;
+        else if (MovesRight)
+            _moveDirection = Vector3.right;
+    }
+
     private void Update()
     {
         if (_isGrounded) //If the snowball is grounded
-        {
-            Velocity = _moveDirection.normalized * Speed; //Set velocity to the normalized move direction times speed
-            transform.position += Velocity * Time.deltaTime; //Increase the position by velocity times delta time
+        {        
+           Velocity = _moveDirection.normalized * Speed; //Set velocity to the normalized move direction times speed
+           transform.position += Velocity * Time.deltaTime; //Increase the position by velocity times delta time
         } 
     }
 
