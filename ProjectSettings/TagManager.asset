@@ -8,7 +8,6 @@ TagManager:
   - ground
   - snowball
   - Barrier
-  - pickAxe_UG
   - Collectable
   - Canvas
   - PickAxeUpgrade
@@ -21,9 +20,9 @@ TagManager:
   - Water
   - UI
   - player
-  - pickAxe_UG
-  - snowBall_UG
-  - 
+  - Collectables
+  - SnowBall
+  - PickAxeUpgrade
   - 
   - 
   - 
