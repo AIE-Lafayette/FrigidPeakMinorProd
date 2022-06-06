@@ -37,7 +37,7 @@ public class CameraShakeBehavior : MonoBehaviour
             {
                 //Set CanShake to false
                 _canShake = false;
-
+                                                                 
                 //Set timer to 0
                 _timer = 0f;
             }
