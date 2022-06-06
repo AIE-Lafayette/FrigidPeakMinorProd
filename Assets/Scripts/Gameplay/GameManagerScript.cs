@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections.Generic;
+using System.IO;
 using TMPro;
 
 public enum PlayersLiveState
@@ -26,6 +26,8 @@ public class GameManagerScript : MonoBehaviour
     private Image _life2;
     [SerializeField]
     private Image _life3;
+
+    LoadAndSaceScript saveFile = new LoadAndSaceScript();
 
 
     static private PlayersLiveState _currentLives = PlayersLiveState.THREELIVES;
@@ -54,6 +56,12 @@ public class GameManagerScript : MonoBehaviour
 
     //Plyer death State
     static public bool  IsAlive { get => _isAlive; }
+
+    private void Awake()
+    {
+        if (saveFile.Load())
+            Debug.Log("LoadFailed");
+    }
 
     //Updates Once Per Frame 
     private void Update()
@@ -107,6 +115,9 @@ public class GameManagerScript : MonoBehaviour
         _currentLives--;
     }
 
+    /// <summary>
+    /// ReInizalizes the current values to be that of the defulted values
+    /// </summary>
     static public void Reinitialize()
     {
         _currentLives = PlayersLiveState.THREELIVES;
