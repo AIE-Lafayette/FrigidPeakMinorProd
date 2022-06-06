@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 929af602dfa6c6243855240ec4e2e1e9
+guid: d737e618b3250204bb0c4dbff96de277
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
       74: 1827226128182048838
-    second: rope_climbing
+    second: Death(Start)
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -35,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: rope_climbing
+      name: Death(Start)
       takeName: Take 001
       internalID: 0
       firstFrame: 1
-      lastFrame: 15
+      lastFrame: 10
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
