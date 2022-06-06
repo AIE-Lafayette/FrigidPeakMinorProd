@@ -5,17 +5,30 @@ using UnityEngine;
 public class SnowballSpawnBehavior : MonoBehaviour
 {
     [SerializeField]
-    private GameObject _snowball;
+    private SnowballMovementBehavior _snowball; //The snowball to clone and spawn
     [SerializeField]
-    private float _cooldown;
+    private float _cooldown; //Cooldown between spawns
     private float _spawnTime = 0.0f;
+    [SerializeField]
+    private GameObject _player;
 
     private void Update()
     {
-        if (_spawnTime >= _cooldown)
+        if (_spawnTime >= _cooldown) //If spawn time is greater than the cooldown
         {
-            GameObject spawnedObject = Instantiate(_snowball, transform.position, transform.rotation);
+            SnowballMovementBehavior spawnedObject = Instantiate(_snowball, transform.position, transform.rotation); //Instantiate the snowballs 
             _spawnTime = 0.0f;
+
+            if (_player.transform.position.x < transform.position.x)
+            {
+                spawnedObject.MovesLeft = true;
+                spawnedObject.MovesRight = false;
+            }
+            else if (_player.transform.position.x > transform.position.x)
+            {
+                spawnedObject.MovesLeft = false;
+                spawnedObject.MovesRight = true;
+            }
         }
         _spawnTime += Time.deltaTime;
     }

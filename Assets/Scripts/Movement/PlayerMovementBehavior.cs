@@ -6,11 +6,15 @@ public class PlayerMovementBehavior : MonoBehaviour
 {
     [SerializeField]
     private float _speed;
+    private ConstantForce _force;
     private Rigidbody _rigidBody;
+    private Vector3 _originalPos;
 
     // Movement Vars
+    private Vector3 _velocity;
     private Vector3 _moveDir;
     private bool _canGoVertical;
+    private bool _isOnRope;
 
     //Jumping Vars
     [SerializeField]
@@ -18,61 +22,80 @@ public class PlayerMovementBehavior : MonoBehaviour
     private Vector3 _jumpHeight;
     private bool _isGrounded;
 
-    public Rigidbody rigidbody { get { return _rigidBody; } }
+    public ConstantForce Force { get { return _force; } private set { _force = value; } }
+    public float Speed { get { return _speed; } set { _speed = value; } }
+    public bool IsOnRope { get { return _isOnRope; } set { _isOnRope = value; } }
+    public bool IsGrounded { get { return _isGrounded; } set { _isGrounded = value; } }
     public Vector3 MoveDirection { get { return _moveDir; } set { _moveDir = value; } }
     public bool CanGoVertical { get { return _canGoVertical; } set { _canGoVertical = value; } }
-
-    public float JumpForce { get { return _jumpForce; } }
-    public Vector3 JumpHeight { get { return _jumpHeight; } }
-    public bool IsGrounded { get { return _isGrounded; } set { _isGrounded = value; } }
 
     private void Awake()
     {
         //Get the rigidbody component
         _rigidBody = GetComponent<Rigidbody>();
+        Force = GetComponent<ConstantForce>();
         _canGoVertical = false;
         _jumpHeight = new Vector3(0.0f, 0.5f);
+        _originalPos = transform.position;
+    }
+
+    public void Move()
+    {
+        Vector3 newMoveDir = MoveDirection;
+        if (_isGrounded || _isOnRope)
+        {
+            if (!_canGoVertical)
+            {
+                //Stopping any upward movement
+                newMoveDir = new Vector3(MoveDirection.x, 0, 0);
+            }
+
+            // Set the velocity
+            _velocity = newMoveDir * _speed * Time.deltaTime;
+        }
+    }
+
+    public void Jump()
+    {
+        //if the player is grounded
+        if (_isGrounded)
+        {
+            // Add a force to push the player upward.
+            _rigidBody.AddForce(_jumpHeight * _jumpForce, ForceMode.Impulse);
+        }
     }
 
     private void FixedUpdate()
     {
-        Vector3 newMoveDir = MoveDirection;
-
-        if (!_canGoVertical)
-        {
-            newMoveDir = new Vector3(MoveDirection.x, 0, 0);
-        }
-
-        // Set the velocity
-        Vector3 velocity = newMoveDir * _speed * Time.deltaTime;
-
         // Move The position of the rigidbody
-        _rigidBody.MovePosition(transform.position + velocity);
+        _rigidBody.MovePosition(transform.position + _velocity);
+
+        //Moves the players forward according to rotation
+        if (_velocity.magnitude > 0)
+        {
+            transform.forward = new Vector3(_velocity.normalized.x, 0);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         // If the collider has the tag ground
         if (collision.gameObject.CompareTag("ground"))
-        {
             //Set isGrounded to true
             _isGrounded = true;
-        }
-
-        // If the collider has the tag snowball 
-        if (collision.gameObject.CompareTag("snowball"))
-        {
-            //Lose a life
-        }
     }
 
     private void OnCollisionExit(Collision collision)
     {
         // If the collider has the tag ground
         if (collision.gameObject.CompareTag("ground"))
-        {
-            //Set isGrounded to true
+            //Set isGrounded to false
             _isGrounded = false;
-        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawRay(new Ray(transform.position, transform.forward));
     }
 }
