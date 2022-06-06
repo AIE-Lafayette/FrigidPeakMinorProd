@@ -1333,6 +1333,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -52.22
       objectReference: {fileID: 0}
+    - target: {fileID: 3078770404301214714, guid: 981880b036123dc4cb070a1c0ae784f5, type: 3}
+      propertyPath: _winScreen
+      value: 
+      objectReference: {fileID: 867882232}
     - target: {fileID: 3245585580393531826, guid: 981880b036123dc4cb070a1c0ae784f5, type: 3}
       propertyPath: _pointsWorth
       value: 3

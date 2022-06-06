@@ -9,6 +9,7 @@ public class SoundManagerBehavior : MonoBehaviour
     private static bool _playClip;
 
     public static bool PlayClip { get => _playClip; set => _playClip = value; }
+    public static AudioSource Source { get => _source; }
 
     private void Awake()
     {
