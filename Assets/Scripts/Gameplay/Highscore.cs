@@ -29,9 +29,9 @@ public class Highscore
 
     public void Save()
     {
-            StreamWriter write = File.CreateText(_path);
         if (!File.Exists(_path))
         {
+            StreamWriter write = File.CreateText(_path);
             write.WriteLine(_currentHighscore.ToString());
             write.Close();
         }
