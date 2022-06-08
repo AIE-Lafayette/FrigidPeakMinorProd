@@ -84,8 +84,6 @@ public class GameManagerScript : MonoBehaviour
 
         //Updates the text to the game score
         _gameScoreTest.text = _gameScore.ToString();
-
-        _highscore.Save();
     }
 
     /// <summary>
@@ -176,6 +174,7 @@ public class GameManagerScript : MonoBehaviour
                 _life1.enabled = false;
                 _life2.enabled = false;
                 _life3.enabled = false;
+                _highscore.Save();
                 _highscore.NewScore((int)_gameScore);
                 _isAlive = false;
                 break;
