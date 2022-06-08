@@ -12,7 +12,7 @@ public class Highscore
     public Highscore(int highscore, string path)
     {
         _currentHighscore = highscore;
-        _path = path;
+        _path = path; 
     }
 
     /// <summary>
@@ -29,7 +29,7 @@ public class Highscore
 
     public void Save()
     {
-            StreamWriter write = new StreamWriter(_path);
+            StreamWriter write = File.CreateText(_path);
         if (!File.Exists(_path))
         {
             write.WriteLine(_currentHighscore.ToString());
