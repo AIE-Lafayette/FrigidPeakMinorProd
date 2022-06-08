@@ -163,7 +163,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
-  _jumpForce: 10
+  _jumpForce: 12
+  _jumpClip: {fileID: 8300000, guid: 9d5d023576d966b43a7e6f01dcc8b7d6, type: 3}
 --- !u!114 &6254570855963095415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,6 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89d7feba0677f384ba5b16423745e433, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerDeathSound: {fileID: 8300000, guid: 0844ec30533c2364ea85c819fde906c9, type: 3}
 --- !u!114 &8200248708671349252
 MonoBehaviour:
   m_ObjectHideFlags: 0
