@@ -25,6 +25,7 @@ public class PlayerMovementBehavior : MonoBehaviour
     private bool _isGrounded;
 
     public ConstantForce Force { get { return _force; } private set { _force = value; } }
+    public Vector3 Velocity { get { return _velocity; } private set { _velocity = value; } }
     public float Speed { get { return _speed; } set { _speed = value; } }
     public bool IsOnRope { get { return _isOnRope; } set { _isOnRope = value; } }
     public bool IsGrounded { get { return _isGrounded; } set { _isGrounded = value; } }
@@ -53,7 +54,7 @@ public class PlayerMovementBehavior : MonoBehaviour
             }
 
             // Set the velocity
-            _velocity = newMoveDir * _speed * Time.deltaTime;
+            Velocity = newMoveDir * _speed * Time.deltaTime;
         }
     }
 
@@ -65,20 +66,22 @@ public class PlayerMovementBehavior : MonoBehaviour
             SoundManagerBehavior.setSoundClip(_jumpClip);
             SoundManagerBehavior.PlayClip = true;
             // Add a force to push the player upward.
-            _rigidBody.AddForce(_jumpHeight * _jumpForce, ForceMode.Impulse);
+            _rigidBody.AddForce(_jumpHeight * _jumpForce, ForceMode.Force);
         }
     }
 
     private void FixedUpdate()
     {
         // Move The position of the rigidbody
-        _rigidBody.MovePosition(transform.position + _velocity);
+        _rigidBody.velocity += Velocity * Speed;
+        //Debug.Log(_rigidBody.velocity.magnitude);
+
+        if (_rigidBody.velocity.magnitude > Speed)
+            _rigidBody.velocity = _rigidBody.velocity.normalized * Speed;
 
         //Moves the players forward according to rotation
-        if (_velocity.magnitude > 0)
-        {
-            transform.forward = new Vector3(_velocity.normalized.x, 0);
-        }
+        if (Velocity.magnitude > 0)
+            transform.forward = new Vector3(Velocity.normalized.x, 0);
     }
 
     private void OnCollisionEnter(Collision collision)
