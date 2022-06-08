@@ -19,6 +19,8 @@ public class PlayerMovementBehavior : MonoBehaviour
     //Jumping Vars
     [SerializeField]
     private float _jumpForce = 2.0f;
+    [SerializeField]
+    private AudioClip _jumpClip;
     private Vector3 _jumpHeight;
     private bool _isGrounded;
 
@@ -60,6 +62,8 @@ public class PlayerMovementBehavior : MonoBehaviour
         //if the player is grounded
         if (_isGrounded)
         {
+            SoundManagerBehavior.setSoundClip(_jumpClip);
+            SoundManagerBehavior.PlayClip = true;
             // Add a force to push the player upward.
             _rigidBody.AddForce(_jumpHeight * _jumpForce, ForceMode.Impulse);
         }
