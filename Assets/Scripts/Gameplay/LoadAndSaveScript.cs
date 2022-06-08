@@ -2,6 +2,9 @@ using System.IO;
 
 public class LoadAndSaveScript
 {
+    /// <summary>
+    /// Contains the values of 
+    /// </summary>
     private struct PlayerScore
     {
         public string Name;
