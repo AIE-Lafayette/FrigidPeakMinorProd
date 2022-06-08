@@ -66,7 +66,7 @@ public class PlayerMovementBehavior : MonoBehaviour
             SoundManagerBehavior.setSoundClip(_jumpClip);
             SoundManagerBehavior.PlayClip = true;
             // Add a force to push the player upward.
-            _rigidBody.AddForce(_jumpHeight * _jumpForce, ForceMode.Force);
+            _rigidBody.AddForce(_jumpHeight * _jumpForce, ForceMode.Impulse);
         }
     }
 
