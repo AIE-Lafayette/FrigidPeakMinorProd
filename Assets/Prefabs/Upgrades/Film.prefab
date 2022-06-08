@@ -184,6 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pointsWorth: 300
+  _audioSource: {fileID: 8300000, guid: 5064535cd65175845932cbcb71a31ecc, type: 3}
 --- !u!114 &1035892143743788446
 MonoBehaviour:
   m_ObjectHideFlags: 0

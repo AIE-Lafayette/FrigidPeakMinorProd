@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RopeBehavior : MonoBehaviour
 {
+    [SerializeField]
+    private AudioClip _climbSound;
     private PlayerMovementBehavior _playerMovement;
 
     private void OnTriggerEnter(Collider other)
