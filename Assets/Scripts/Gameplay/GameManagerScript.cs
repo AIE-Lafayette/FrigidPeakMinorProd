@@ -41,6 +41,7 @@ public class GameManagerScript : MonoBehaviour
     static private float _currentGameTimer = 0;
     static private float _gameScore = 0;
 
+
     static bool _isAlive = true;
 
     /// <summary>
