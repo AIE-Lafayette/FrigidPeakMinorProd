@@ -87,11 +87,11 @@ public class LoadAndSaveScript
             if (j == _scoreBoard.Length)
                 continue;
 
-            float currentValue = _scoreBoard[i].Score;
-            if (currentValue < _scoreBoard[j].Score)
+            PlayerScore currentValue = _scoreBoard[i];
+            if (currentValue.Score < _scoreBoard[j].Score)
             {
                 _scoreBoard[i] = _scoreBoard[j];
-                _scoreBoard[j].Score = currentValue;
+                _scoreBoard[j] = currentValue;
             }
             else continue;
         }
@@ -104,9 +104,9 @@ public class LoadAndSaveScript
             _scoreBoardLength = 3;
             _scoreBoard = new PlayerScore[] 
             { 
-                new PlayerScore { Name = "Nirmal 'Nims' Purja", Score = 29032f},
-                new PlayerScore { Name = "Andrzej Bargiel", Score = 8611},
-                new PlayerScore { Name = "Denis Urubko", Score = 8000}    
+                new PlayerScore { Name = "Andrzej Bargiel", Score = 8611f },
+                new PlayerScore { Name = "Nirmal 'Nims' Purja", Score = 29032f },
+                new PlayerScore { Name = "Denis Urubko", Score = 8000f}    
             };
         }
             SortArry();
