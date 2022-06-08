@@ -375,6 +375,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1186651121773677620, guid: e63bc9498d89b46469a7f25fd95e66c2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1186651121773677622, guid: e63bc9498d89b46469a7f25fd95e66c2, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1066,6 +1070,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1335143505 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1186651121773677620, guid: e63bc9498d89b46469a7f25fd95e66c2, type: 3}
+  m_PrefabInstance: {fileID: 231614379}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1445195894 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5094067065345497382, guid: ff2a12394dfb42a40af37295d2a704c2, type: 3}
@@ -1356,6 +1365,10 @@ PrefabInstance:
       propertyPath: _pointsWorth
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5218393545280137100, guid: 981880b036123dc4cb070a1c0ae784f5, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 1335143505}
     - target: {fileID: 5218393545280137100, guid: 981880b036123dc4cb070a1c0ae784f5, type: 3}
       propertyPath: _cooldown
       value: 2
