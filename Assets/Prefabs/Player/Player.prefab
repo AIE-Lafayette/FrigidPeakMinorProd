@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 4
-  _jumpForce: 15
+  _jumpForce: 100
   _jumpClip: {fileID: 8300000, guid: 9d5d023576d966b43a7e6f01dcc8b7d6, type: 3}
 --- !u!114 &6254570855963095415
 MonoBehaviour:

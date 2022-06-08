@@ -14,7 +14,7 @@ public class RopeBehavior : MonoBehaviour
         if (other.CompareTag("player"))
         {
             _playerMovement = other.GetComponent<PlayerMovementBehavior>();
-            _playerMovement.CanGoVertical = true;
+            other.GetComponent<Rigidbody>().velocity = Vector3.zero;
             _playerMovement.IsOnRope = true;
             _playerMovement.Force.enabled = false;
         }
@@ -25,7 +25,6 @@ public class RopeBehavior : MonoBehaviour
         if (other.CompareTag("player"))
         {
             _playerMovement = other.GetComponent<PlayerMovementBehavior>();
-            _playerMovement.CanGoVertical = false;
             _playerMovement.IsOnRope = false;
             _playerMovement.Force.enabled = true;
         }

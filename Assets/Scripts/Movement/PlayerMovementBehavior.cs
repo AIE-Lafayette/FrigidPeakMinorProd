@@ -13,7 +13,6 @@ public class PlayerMovementBehavior : MonoBehaviour
     // Movement Vars
     private Vector3 _velocity;
     private Vector3 _moveDir;
-    private bool _canGoVertical;
     private bool _isOnRope;
 
     //Jumping Vars
@@ -30,14 +29,12 @@ public class PlayerMovementBehavior : MonoBehaviour
     public bool IsOnRope { get { return _isOnRope; } set { _isOnRope = value; } }
     public bool IsGrounded { get { return _isGrounded; } set { _isGrounded = value; } }
     public Vector3 MoveDirection { get { return _moveDir; } set { _moveDir = value; } }
-    public bool CanGoVertical { get { return _canGoVertical; } set { _canGoVertical = value; } }
 
     private void Awake()
     {
         //Get the rigidbody component
         _rigidBody = GetComponent<Rigidbody>();
         Force = GetComponent<ConstantForce>();
-        _canGoVertical = false;
         _jumpHeight = new Vector3(0.0f, 0.5f);
         _originalPos = transform.position;
     }
@@ -47,7 +44,7 @@ public class PlayerMovementBehavior : MonoBehaviour
         Vector3 newMoveDir = MoveDirection;
         if (_isGrounded || _isOnRope)
         {
-            if (!_canGoVertical)
+            if (!_isOnRope)
             {
                 //Stopping any upward movement
                 newMoveDir = new Vector3(MoveDirection.x, 0, 0);
