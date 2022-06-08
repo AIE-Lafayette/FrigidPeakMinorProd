@@ -82,10 +82,4 @@ public class SnowballMovementBehavior : MonoBehaviour
                 _moveDirection = Vector3.left; //Set the move direction to left
         }
     }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "snowball")
-            Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
-    }
 }
