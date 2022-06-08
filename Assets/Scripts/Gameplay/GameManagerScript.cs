@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections.Generic;
+using System.IO;
 using TMPro;
 
 public enum PlayersLiveState
@@ -10,6 +10,7 @@ public enum PlayersLiveState
     TWOLIVES,
     THREELIVES
 }
+
 
 public class GameManagerScript : MonoBehaviour
 {
@@ -21,17 +22,24 @@ public class GameManagerScript : MonoBehaviour
     private TextMeshProUGUI _gameScoreTest;
 
     [SerializeField]
+    private TextMeshProUGUI _displayHighscore;
+
+    [SerializeField]
     private Image _life1;
     [SerializeField]
     private Image _life2;
     [SerializeField]
     private Image _life3;
 
+    private LoadAndSaveScript _saveFile = new LoadAndSaveScript("ScoreBoard.txt");
+
 
     static private PlayersLiveState _currentLives = PlayersLiveState.THREELIVES;
     static private int _collectables = 0;
     static private float _currentGameTimer = 0;
     static private float _gameScore = 0;
+
+    private float _highscore;
 
     static bool _isAlive = true;
 
@@ -55,6 +63,14 @@ public class GameManagerScript : MonoBehaviour
     //Plyer death State
     static public bool  IsAlive { get => _isAlive; }
 
+    private void Awake()
+    {
+        if (!_saveFile.Load())
+            Debug.Log("LoadFailed");
+
+        _highscore = _saveFile.HighScore();
+    }
+
     //Updates Once Per Frame 
     private void Update()
     {
@@ -62,6 +78,8 @@ public class GameManagerScript : MonoBehaviour
 
         _currentGameTimer += Time.deltaTime;
         TimeClock(_currentGameTimer);
+
+        _displayHighscore.text = _highscore.ToString();
 
         //Updates the text to the game score
         _gameScoreTest.text = GameScore.ToString();
@@ -107,6 +125,9 @@ public class GameManagerScript : MonoBehaviour
         _currentLives--;
     }
 
+    /// <summary>
+    /// ReInizalizes the current values to be that of the defulted values
+    /// </summary>
     static public void Reinitialize()
     {
         _currentLives = PlayersLiveState.THREELIVES;
@@ -117,6 +138,17 @@ public class GameManagerScript : MonoBehaviour
         _isAlive = true;
     }
 
+    public void Save(string name)
+    {
+        name.ToUpper();
+
+        _saveFile.AddScore(name,GameScore);
+        _saveFile.Save();
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
     private void LifeState()
     {
         switch (_currentLives)
