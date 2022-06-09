@@ -13,9 +13,8 @@ public class PlayerAnimationBehaviors : MonoBehaviour
     void Update()
     {
         _animator.SetFloat("speed", _playerMovement.GetComponent<Rigidbody>().velocity.magnitude);
-        Debug.Log(_playerMovement.GetComponent<Rigidbody>().velocity.magnitude);
 
-        if (_playerMovement.IsOnRope)
+        if (_playerMovement.IsClimbing)
             _animator.SetBool("isClimbing", true);
         else
             _animator.SetBool("isClimbing", false);

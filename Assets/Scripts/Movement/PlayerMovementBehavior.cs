@@ -13,7 +13,8 @@ public class PlayerMovementBehavior : MonoBehaviour
     // Movement Vars
     private Vector3 _velocity;
     private Vector3 _moveDir;
-    private bool _isOnRope;
+    private bool _isClimbing;
+    private bool _ropeInRange;
 
     //Jumping Vars
     [SerializeField]
@@ -26,7 +27,8 @@ public class PlayerMovementBehavior : MonoBehaviour
     public ConstantForce Force { get { return _force; } private set { _force = value; } }
     public Vector3 Velocity { get { return _velocity; } private set { _velocity = value; } }
     public float Speed { get { return _speed; } set { _speed = value; } }
-    public bool IsOnRope { get { return _isOnRope; } set { _isOnRope = value; } }
+    public bool IsClimbing { get { return _isClimbing; } set { _isClimbing = value; } }
+    public bool RopeInRange { get { return _ropeInRange; } set { _ropeInRange = value; } }
     public bool IsGrounded { get { return _isGrounded; } set { _isGrounded = value; } }
     public Vector3 MoveDirection { get { return _moveDir; } set { _moveDir = value; } }
 
@@ -35,24 +37,16 @@ public class PlayerMovementBehavior : MonoBehaviour
         //Get the rigidbody component
         _rigidBody = GetComponent<Rigidbody>();
         Force = GetComponent<ConstantForce>();
-        _jumpHeight = new Vector3(0.0f, 0.5f);
+        _jumpHeight = new Vector3(0.0f, 1.0f);
         _originalPos = transform.position;
     }
 
     public void Move()
     {
         Vector3 newMoveDir = MoveDirection;
-        if (_isGrounded || _isOnRope)
-        {
-            if (!_isOnRope)
-            {
-                //Stopping any upward movement
-                newMoveDir = new Vector3(MoveDirection.x, 0, 0);
-            }
 
-            // Set the velocity
-            Velocity = newMoveDir * _speed * Time.deltaTime;
-        }
+        // Set the velocity
+        Velocity = newMoveDir * _speed * Time.deltaTime;
     }
 
     public void Jump()
@@ -79,6 +73,12 @@ public class PlayerMovementBehavior : MonoBehaviour
         //Moves the players forward according to rotation
         if (Velocity.magnitude > 0)
             transform.forward = new Vector3(Velocity.normalized.x, 0);
+    }
+
+    public void ClimbRope()
+    {
+        _rigidBody.velocity = Vector3.zero * Speed * Time.deltaTime;
+        _isClimbing = true;
     }
 
     private void OnCollisionEnter(Collision collision)

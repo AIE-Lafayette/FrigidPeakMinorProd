@@ -37,6 +37,10 @@ public class InputDelegateBehavior : MonoBehaviour
     void FixedUpdate()
     {
         _playerMovement.MoveDirection = _playerControls.Player.Movement.ReadValue<Vector2>();
+
+        if (_playerMovement.RopeInRange && _playerMovement.MoveDirection.y > 0)
+            _playerMovement.ClimbRope();
+
         _playerMovement.Move();
     }
 }
