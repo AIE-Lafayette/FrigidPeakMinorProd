@@ -109,3 +109,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 483f5feddbf4ab4439e39da78a655e2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _climbSound: {fileID: 8300000, guid: 9d5d023576d966b43a7e6f01dcc8b7d6, type: 3}
