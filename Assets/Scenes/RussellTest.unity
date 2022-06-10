@@ -669,6 +669,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -96.92801
       objectReference: {fileID: 0}
+    - target: {fileID: 5967161785188279809, guid: 8214ba0a78fce1f4fa7858d6cbddcf98, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 10000000
+      objectReference: {fileID: 0}
     - target: {fileID: 5967161785188279811, guid: 8214ba0a78fce1f4fa7858d6cbddcf98, type: 3}
       propertyPath: m_Name
       value: Particle System
