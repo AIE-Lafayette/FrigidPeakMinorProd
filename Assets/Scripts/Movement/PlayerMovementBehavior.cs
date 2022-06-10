@@ -22,6 +22,7 @@ public class PlayerMovementBehavior : MonoBehaviour
     [SerializeField]
     private AudioClip _jumpClip;
     private Vector3 _jumpHeight;
+    [SerializeField]
     private bool _isGrounded;
 
     public ConstantForce Force { get { return _force; } private set { _force = value; } }
@@ -45,8 +46,11 @@ public class PlayerMovementBehavior : MonoBehaviour
     {
         Vector3 newMoveDir = MoveDirection;
 
+        if (!IsClimbing)
+            newMoveDir = new Vector3(MoveDirection.x, 0, 0);
+
         // Set the velocity
-        Velocity = newMoveDir * _speed * Time.deltaTime;
+        Velocity = newMoveDir * _speed;
     }
 
     public void Jump()
@@ -57,18 +61,15 @@ public class PlayerMovementBehavior : MonoBehaviour
             SoundManagerBehavior.setSoundClip(_jumpClip);
             SoundManagerBehavior.PlayClip = true;
             // Add a force to push the player upward.
-            _rigidBody.AddForce(_jumpHeight * _jumpForce, ForceMode.Impulse);
+            _rigidBody.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
+            _isGrounded = false;
         }
     }
 
     private void FixedUpdate()
     {
         // Move The position of the rigidbody
-        _rigidBody.velocity += Velocity * Speed;
-        //Debug.Log(_rigidBody.velocity.magnitude);
-
-        if (_rigidBody.velocity.magnitude > Speed)
-            _rigidBody.velocity = _rigidBody.velocity.normalized * Speed;
+        transform.position += Velocity * Time.fixedDeltaTime;
 
         //Moves the players forward according to rotation
         if (Velocity.magnitude > 0)
@@ -77,24 +78,8 @@ public class PlayerMovementBehavior : MonoBehaviour
 
     public void ClimbRope()
     {
-        _rigidBody.velocity = Vector3.zero * Speed * Time.deltaTime;
+        _rigidBody.velocity = Vector3.zero;
         _isClimbing = true;
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        // If the collider has the tag ground
-        if (collision.gameObject.CompareTag("ground"))
-            //Set isGrounded to true
-            _isGrounded = true;
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        // If the collider has the tag ground
-        if (collision.gameObject.CompareTag("ground"))
-            //Set isGrounded to false
-            _isGrounded = false;
     }
 
     private void OnDrawGizmos()

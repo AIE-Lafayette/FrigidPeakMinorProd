@@ -12,7 +12,7 @@ public class PlayerAnimationBehaviors : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _animator.SetFloat("speed", _playerMovement.GetComponent<Rigidbody>().velocity.magnitude);
+        _animator.SetFloat("speed", _playerMovement.Velocity.magnitude);
 
         if (_playerMovement.IsClimbing)
             _animator.SetBool("isClimbing", true);
