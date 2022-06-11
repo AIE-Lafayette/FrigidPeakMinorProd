@@ -68,6 +68,9 @@ public class PlayerMovementBehavior : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!IsGrounded)
+            Velocity /= 2;
+
         // Move The position of the rigidbody
         transform.position += Velocity * Time.fixedDeltaTime;
 
