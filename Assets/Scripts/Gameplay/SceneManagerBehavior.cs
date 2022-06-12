@@ -26,10 +26,11 @@ public class SceneManagerBehavior : MonoBehaviour
     /// <summary>
     /// Restarts the game 
     /// </summary>
-    public void RestartGame(string sceneName)
+    public void RestartGame()
     {
         GameManagerScript.Reinitialize();
-        SceneManager.LoadScene(sceneName);
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.name);
         Time.timeScale = 1; //Resets the time scale
         InputSystem.settings.updateMode = InputSettings.UpdateMode.ProcessEventsInFixedUpdate; //Resets the update mode.
     }

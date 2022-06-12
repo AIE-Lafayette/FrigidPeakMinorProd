@@ -31,15 +31,16 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField]
     private Image _life3;
 
-    private LoadAndSaveScript _saveFile = new LoadAndSaveScript("ScoreBoard.txt");
+    //private LoadAndSaveScript _saveFile = new LoadAndSaveScript("ScoreBoard.txt");
+
+    static private Highscore _highscore = new Highscore(29032, "ScoreBoard.txt");
 
 
-    static private PlayersLiveState _currentLives = PlayersLiveState.THREELIVES;
+    static private PlayersLiveState _currentLives = PlayersLiveState.ONELIFE;
     static private int _collectables = 0;
     static private float _currentGameTimer = 0;
     static private float _gameScore = 0;
 
-    private float _highscore;
 
     static bool _isAlive = true;
 
@@ -65,10 +66,10 @@ public class GameManagerScript : MonoBehaviour
 
     private void Awake()
     {
-        if (!_saveFile.Load())
-            Debug.Log("LoadFailed");
+        //if (!_saveFile.Load())
+        //    Debug.Log("LoadFailed");
 
-        _highscore = _saveFile.HighScore();
+        //_highscore = _saveFile.HighScore();
     }
 
     //Updates Once Per Frame 
@@ -79,10 +80,11 @@ public class GameManagerScript : MonoBehaviour
         _currentGameTimer += Time.deltaTime;
         TimeClock(_currentGameTimer);
 
-        _displayHighscore.text = _highscore.ToString();
+
+        _displayHighscore.text = _highscore.CurrentHighscore.ToString();
 
         //Updates the text to the game score
-        _gameScoreTest.text = GameScore.ToString();
+        _gameScoreTest.text = _gameScore.ToString();
     }
 
     /// <summary>
@@ -138,16 +140,17 @@ public class GameManagerScript : MonoBehaviour
         _isAlive = true;
     }
 
-    public void Save(string name)
-    {
-        name.ToUpper();
+    // Was a save file for the player to save there progress 
+    //public void Save(string name)
+    //{
+    //    name.ToUpper();
 
-        _saveFile.AddScore(name,GameScore);
-        _saveFile.Save();
-    }
+    //    _saveFile.AddScore(name,GameScore);
+    //    _saveFile.Save();
+    //}
 
     /// <summary>
-    /// 
+    /// Player life states 
     /// </summary>
     private void LifeState()
     {
@@ -172,6 +175,8 @@ public class GameManagerScript : MonoBehaviour
                 _life1.enabled = false;
                 _life2.enabled = false;
                 _life3.enabled = false;
+                _highscore.Save();
+                _highscore.NewScore((int)_gameScore);
                 _isAlive = false;
                 break;
         }
