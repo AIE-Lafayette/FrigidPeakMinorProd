@@ -36,7 +36,7 @@ public class GameManagerScript : MonoBehaviour
     static private Highscore _highscore = new Highscore(29032, "ScoreBoard.txt");
 
 
-    static private PlayersLiveState _currentLives = PlayersLiveState.ONELIFE;
+    static private PlayersLiveState _currentLives = PlayersLiveState.THREELIVES;
     static private int _collectables = 0;
     static private float _currentGameTimer = 0;
     static private float _gameScore = 0;
