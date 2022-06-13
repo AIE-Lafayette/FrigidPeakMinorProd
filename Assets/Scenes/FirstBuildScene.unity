@@ -218,6 +218,10 @@ PrefabInstance:
       propertyPath: _waitTime
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 776971063661860315, guid: 77471bccf054cf644a5c82fba7a53edf, type: 3}
+      propertyPath: _pushbackForce
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1186651121773677576, guid: 77471bccf054cf644a5c82fba7a53edf, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -232,7 +236,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1186651121773677576, guid: 77471bccf054cf644a5c82fba7a53edf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.49
+      value: -0.09
       objectReference: {fileID: 0}
     - target: {fileID: 1186651121773677576, guid: 77471bccf054cf644a5c82fba7a53edf, type: 3}
       propertyPath: m_LocalRotation.w
@@ -268,7 +272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1186651121773677578, guid: 77471bccf054cf644a5c82fba7a53edf, type: 3}
       propertyPath: _jumpForce
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1186651121773677579, guid: 77471bccf054cf644a5c82fba7a53edf, type: 3}
       propertyPath: m_Mass
@@ -1255,6 +1259,10 @@ PrefabInstance:
       propertyPath: _winScreen
       value: 
       objectReference: {fileID: 211605731}
+    - target: {fileID: 2894658910112871832, guid: 5aa9e6924a784a64aaf73c571660c292, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a1445577a9b52b948b5d232051a904f2, type: 2}
     - target: {fileID: 3406160577780742116, guid: 5aa9e6924a784a64aaf73c571660c292, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.33763182
