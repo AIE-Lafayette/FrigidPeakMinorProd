@@ -8,9 +8,10 @@ TagManager:
   - ground
   - snowball
   - Barrier
-  - pickAxe_UG
   - Collectable
   - Canvas
+  - PickAxeUpgrade
+  - outOfBounds
   layers:
   - Default
   - TransparentFX
@@ -19,10 +20,10 @@ TagManager:
   - Water
   - UI
   - player
-  - pickAxe_UG
-  - snowBall_UG
-  - 
-  - 
+  - Collectables
+  - SnowBall
+  - PickAxeUpgrade
+  - Platform
   - 
   - 
   - 

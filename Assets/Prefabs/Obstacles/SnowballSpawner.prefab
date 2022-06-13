@@ -43,5 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa38832700fdb3e4eb8b6947f75616bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _snowball: {fileID: 1627672293855352738, guid: f8ca8f832fc43ce4bb35bb73b72b19bd, type: 3}
+  _snowball: {fileID: 1686489049719393336, guid: f8ca8f832fc43ce4bb35bb73b72b19bd, type: 3}
   _cooldown: 1
+  _player: {fileID: 1186651121773677620, guid: 77471bccf054cf644a5c82fba7a53edf, type: 3}

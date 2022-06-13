@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RopeBehavior : MonoBehaviour
 {
+    [SerializeField]
+    private AudioClip _climbSound;
     private PlayerMovementBehavior _playerMovement;
 
     private void OnTriggerEnter(Collider other)
@@ -12,9 +14,8 @@ public class RopeBehavior : MonoBehaviour
         if (other.CompareTag("player"))
         {
             _playerMovement = other.GetComponent<PlayerMovementBehavior>();
-            _playerMovement.CanGoVertical = true;
-            _playerMovement.IsOnRope = true;
-            _playerMovement.GetComponent<Rigidbody>().isKinematic = true;
+            _playerMovement.RopeInRange = true;
+            _playerMovement.GetComponent<Rigidbody>().useGravity = false;
         }
     }
 
@@ -23,9 +24,9 @@ public class RopeBehavior : MonoBehaviour
         if (other.CompareTag("player"))
         {
             _playerMovement = other.GetComponent<PlayerMovementBehavior>();
-            _playerMovement.CanGoVertical = false;
-            _playerMovement.IsOnRope = false;
-            _playerMovement.GetComponent<Rigidbody>().isKinematic = false;
+            _playerMovement.RopeInRange = false;
+            _playerMovement.IsClimbing = false;
+            _playerMovement.GetComponent<Rigidbody>().useGravity = true;
         }
     }
 }

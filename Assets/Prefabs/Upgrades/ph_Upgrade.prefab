@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 721863360162694386}
   - component: {fileID: 721863360162694387}
   - component: {fileID: 9023308390819878722}
-  m_Layer: 0
+  - component: {fileID: 1803573906810613719}
+  m_Layer: 7
   m_Name: ph_Upgrade
-  m_TagString: Collectable
+  m_TagString: PickAxeUpgrade
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,7 +125,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e58868503aa838441bc87dd9231d1c46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pointsWorth: 0
+  _pointsWorth: 100
+  _audioSource: {fileID: 8300000, guid: 6a916aff6d4face46b85f986f362891e, type: 3}
+--- !u!114 &1803573906810613719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721863360162694380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39cf6a3002e4885469192daca1c4af34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frequency: 1
+  _magnitude: 1
 --- !u!1 &721863360721112760
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,7 +151,7 @@ GameObject:
   m_Component:
   - component: {fileID: 721863360721112767}
   - component: {fileID: 721863360721112766}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +280,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8860892104830687211}
   - component: {fileID: 5356137709831653376}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pickAxe_upGrade_collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
