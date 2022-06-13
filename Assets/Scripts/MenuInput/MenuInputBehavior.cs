@@ -30,6 +30,14 @@ public class MenuInputBehavior : MonoBehaviour
         Application.Quit();
     }
 
+    public void ToMainMenu(string menuName)
+    {
+        GameManagerScript.Reinitialize();
+        SceneManager.LoadScene(menuName);
+        Time.timeScale = 1; //Resets the time scale
+        InputSystem.settings.updateMode = InputSettings.UpdateMode.ProcessEventsInFixedUpdate;
+    }
+
     public void ShowPauseMenu()
     {
         if (!_onMainMenu)
