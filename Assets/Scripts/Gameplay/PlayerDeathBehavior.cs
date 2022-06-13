@@ -15,9 +15,8 @@ public class PlayerDeathBehavior : MonoBehaviour
         if (collision.gameObject.tag == "snowball" || collision.gameObject.CompareTag("outOfBounds")) //On collision with a snowball
         {
             _deathSoundSource.Play();
-            GameManagerScript.LostALife(); //Decrement player lives
-            _currentAction = RoutineBehaviour.Instance.StartNewTimedAction(args => SceneManagerBehavior.RestartLevel(), TimedActionCountType.SCALEDTIME, _waitTime);
-            /*SceneManagerBehavior.RestartLevel();*/ //Restart the level
+            GameManagerScript.LostALife(); //Decrement player lives        
+            _currentAction = RoutineBehaviour.Instance.StartNewTimedAction(args => SceneManagerBehavior.RestartLevel(), TimedActionCountType.SCALEDTIME, _waitTime); //Resstart the level
         }
     }
 }

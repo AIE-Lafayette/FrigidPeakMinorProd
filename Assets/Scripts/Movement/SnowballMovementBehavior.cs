@@ -56,6 +56,7 @@ public class SnowballMovementBehavior : MonoBehaviour
         {        
            Velocity = _moveDirection.normalized * Speed; //Set velocity to the normalized move direction times speed
            transform.position += Velocity * Time.deltaTime; //Increase the position by velocity times delta time
+            transform.rotation.SetLookRotation(Velocity);
         } 
     }
 
