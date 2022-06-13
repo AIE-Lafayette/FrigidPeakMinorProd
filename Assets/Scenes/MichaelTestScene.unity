@@ -688,6 +688,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1460844868 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4070497891888512080, guid: 77471bccf054cf644a5c82fba7a53edf, type: 3}
+  m_PrefabInstance: {fileID: 1981194778}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1470388885
 GameObject:
   m_ObjectHideFlags: 0
@@ -1427,6 +1432,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1876532730 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3256330399692419521, guid: 77471bccf054cf644a5c82fba7a53edf, type: 3}
+  m_PrefabInstance: {fileID: 1981194778}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1949436634
 GameObject:
   m_ObjectHideFlags: 0
@@ -1569,6 +1579,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 776971063661860315, guid: 77471bccf054cf644a5c82fba7a53edf, type: 3}
+      propertyPath: waitTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 776971063661860315, guid: 77471bccf054cf644a5c82fba7a53edf, type: 3}
+      propertyPath: _deathSoundSource
+      value: 
+      objectReference: {fileID: 1460844868}
+    - target: {fileID: 776971063661860315, guid: 77471bccf054cf644a5c82fba7a53edf, type: 3}
       propertyPath: _playerDeathSound
       value: 
       objectReference: {fileID: 8300000, guid: 522257b63c7451b4fb9944569631dd00, type: 3}
@@ -1616,6 +1634,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1186651121773677578, guid: 77471bccf054cf644a5c82fba7a53edf, type: 3}
+      propertyPath: _jumpSource
+      value: 
+      objectReference: {fileID: 1876532730}
+    - target: {fileID: 1186651121773677578, guid: 77471bccf054cf644a5c82fba7a53edf, type: 3}
+      propertyPath: _deathSource
+      value: 
+      objectReference: {fileID: 1460844868}
     - target: {fileID: 1186651121773677620, guid: 77471bccf054cf644a5c82fba7a53edf, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1624,6 +1650,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 638a73d5a99e88146a7328264ba6d5b1, type: 2}
+    - target: {fileID: 4070497891888512080, guid: 77471bccf054cf644a5c82fba7a53edf, type: 3}
+      propertyPath: m_Volume
+      value: 0.15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77471bccf054cf644a5c82fba7a53edf, type: 3}
 --- !u!1 &2051785631 stripped
