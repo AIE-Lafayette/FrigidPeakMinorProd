@@ -11,11 +11,11 @@ public class SnowballDetectorBehavior : MonoBehaviour
         _playerMovement = GetComponentInParent<PlayerMovementBehavior>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("snowball"))
         {
-            if (!_playerMovement.IsGrounded && !_playerMovement.IsOnRope)
+            if (!_playerMovement.IsGrounded && !_playerMovement.IsClimbing)
                 GameManagerScript.IncreaseScore();
         }
     }

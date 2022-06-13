@@ -13,8 +13,8 @@ public class PlayerMovementBehavior : MonoBehaviour
     // Movement Vars
     private Vector3 _velocity;
     private Vector3 _moveDir;
-    private bool _canGoVertical;
-    private bool _isOnRope;
+    private bool _isClimbing;
+    private bool _ropeInRange;
 
     //Jumping Vars
     [SerializeField]
@@ -22,6 +22,7 @@ public class PlayerMovementBehavior : MonoBehaviour
     //[SerializeField]
     //private AudioClip _jumpClip;
     private Vector3 _jumpHeight;
+    [SerializeField]
     private bool _isGrounded;
 
     //Audio Vars
@@ -29,36 +30,31 @@ public class PlayerMovementBehavior : MonoBehaviour
     private AudioSource _jumpSource;
 
     public ConstantForce Force { get { return _force; } private set { _force = value; } }
+    public Vector3 Velocity { get { return _velocity; } private set { _velocity = value; } }
     public float Speed { get { return _speed; } set { _speed = value; } }
-    public bool IsOnRope { get { return _isOnRope; } set { _isOnRope = value; } }
+    public bool IsClimbing { get { return _isClimbing; } set { _isClimbing = value; } }
+    public bool RopeInRange { get { return _ropeInRange; } set { _ropeInRange = value; } }
     public bool IsGrounded { get { return _isGrounded; } set { _isGrounded = value; } }
     public Vector3 MoveDirection { get { return _moveDir; } set { _moveDir = value; } }
-    public bool CanGoVertical { get { return _canGoVertical; } set { _canGoVertical = value; } }
 
     private void Awake()
     {
         //Get the rigidbody component
         _rigidBody = GetComponent<Rigidbody>();
         Force = GetComponent<ConstantForce>();
-        _canGoVertical = false;
-        _jumpHeight = new Vector3(0.0f, 0.5f);
+        _jumpHeight = new Vector3(0.0f, 1.0f);
         _originalPos = transform.position;
     }
 
     public void Move()
     {
         Vector3 newMoveDir = MoveDirection;
-        if (_isGrounded || _isOnRope)
-        {
-            if (!_canGoVertical)
-            {
-                //Stopping any upward movement
-                newMoveDir = new Vector3(MoveDirection.x, 0, 0);
-            }
 
-            // Set the velocity
-            _velocity = newMoveDir * _speed * Time.deltaTime;
-        }
+        if (!IsClimbing)
+            newMoveDir = new Vector3(MoveDirection.x, 0, 0);
+
+        // Set the velocity
+        Velocity = newMoveDir * _speed;
     }
 
     public void Jump()
@@ -70,36 +66,28 @@ public class PlayerMovementBehavior : MonoBehaviour
             //SoundManagerBehavior.PlayClip = true;
             _jumpSource.Play();
             // Add a force to push the player upward.
-            _rigidBody.AddForce(_jumpHeight * _jumpForce, ForceMode.Impulse);
+            _rigidBody.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
+            _isGrounded = false;
         }
     }
 
     private void FixedUpdate()
     {
+        if (!IsGrounded)
+            Velocity /= 2;
+
         // Move The position of the rigidbody
-        _rigidBody.MovePosition(transform.position + _velocity);
+        transform.position += Velocity * Time.fixedDeltaTime;
 
         //Moves the players forward according to rotation
-        if (_velocity.magnitude > 0)
-        {
-            transform.forward = new Vector3(_velocity.normalized.x, 0);
-        }
+        if (Velocity.magnitude > 0)
+            transform.forward = new Vector3(Velocity.normalized.x, 0);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void ClimbRope()
     {
-        // If the collider has the tag ground
-        if (collision.gameObject.CompareTag("ground"))
-            //Set isGrounded to true
-            _isGrounded = true;
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        // If the collider has the tag ground
-        if (collision.gameObject.CompareTag("ground"))
-            //Set isGrounded to false
-            _isGrounded = false;
+        _rigidBody.velocity = Vector3.zero;
+        _isClimbing = true;
     }
 
     private void OnDrawGizmos()
