@@ -30,13 +30,9 @@ public class Highscore
     public void Save()
     {
             StreamWriter write = File.CreateText(_path);
-        if (!File.Exists(_path))
-        {
             write.WriteLine(_currentHighscore.ToString());
             write.Close();
-        }
-        else
-            File.AppendText(_path);
+       
     }
 
 
