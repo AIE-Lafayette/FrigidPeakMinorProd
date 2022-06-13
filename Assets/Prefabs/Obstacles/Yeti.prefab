@@ -220,6 +220,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Yeti_Rigged
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 10b3cd05bfd17f643a3338cad106dae4, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 17780cd5cc23d6a4e9464e470c7bfca0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10b3cd05bfd17f643a3338cad106dae4, type: 3}
 --- !u!4 &667227711141557938 stripped
