@@ -169,6 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 5
   _jumpForce: 12
+  _isGrounded: 0
   _jumpSource: {fileID: 3256330399692419521}
 --- !u!114 &6254570855963095415
 MonoBehaviour:
@@ -195,7 +196,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _deathSoundSource: {fileID: 4070497891888512080}
-  waitTime: 5
+  _waitTime: 5
+  _pushbackForce: 5
 --- !u!114 &8200248708671349252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,6 +236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerMovement: {fileID: 1186651121773677578}
+  _playerDeath: {fileID: 776971063661860315}
   _animator: {fileID: 1447862895925397464}
 --- !u!1 &2602961699778651611
 GameObject:
@@ -373,7 +376,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1186651121773677576}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &4070497891888512080
 AudioSource:
@@ -500,7 +503,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1186651121773677576}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &3256330399692419521
 AudioSource:

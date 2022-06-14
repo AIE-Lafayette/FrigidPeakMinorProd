@@ -1,6 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
+
+public delegate void Event();
 
 public class PlayerDeathBehavior : MonoBehaviour
 {
@@ -9,15 +13,23 @@ public class PlayerDeathBehavior : MonoBehaviour
     private RoutineBehaviour.TimedAction _currentAction;
     [SerializeField]
     private float _waitTime = 5;
+    private Event _onDeath;
+
+    public Event OnDeath { get => _onDeath; set => _onDeath = value; }
 
     // Death pushback
     private Rigidbody _rigidbody;
+    private InputDelegateBehavior _inputBehavior;
     [SerializeField]
     private float _pushbackForce = 5.0f;
 
-    private void Start()
+    private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        _inputBehavior = GetComponent<InputDelegateBehavior>();
+        _onDeath += () => _deathSoundSource.Play();
+        _onDeath += () => GameManagerScript.LostALife();
+        _onDeath += () => _inputBehavior.enabled = false;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -25,10 +37,8 @@ public class PlayerDeathBehavior : MonoBehaviour
         if (collision.gameObject.tag == "snowball" || collision.gameObject.CompareTag("outOfBounds")) //On collision with a snowball
         {
             _rigidbody.AddForce(-Vector3.forward * _pushbackForce, ForceMode.Impulse);
-            _deathSoundSource.Play();
-            GameManagerScript.LostALife(); //Decrement player lives
+            _onDeath?.Invoke();
             _currentAction = RoutineBehaviour.Instance.StartNewTimedAction(args => SceneManagerBehavior.RestartLevel(), TimedActionCountType.SCALEDTIME, _waitTime);
-            /*SceneManagerBehavior.RestartLevel();*/ //Restart the level
         }
     }
 }
