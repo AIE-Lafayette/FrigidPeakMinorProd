@@ -42,7 +42,7 @@ public class PlayerMovementBehavior : MonoBehaviour
         //Get the rigidbody component
         _rigidBody = GetComponent<Rigidbody>();
         Force = GetComponent<ConstantForce>();
-        _jumpHeight = new Vector3(0.0f, 1.0f);
+        _jumpHeight = new Vector3(0.0f, 0.5f);
         _originalPos = transform.position;
     }
 
@@ -52,6 +52,8 @@ public class PlayerMovementBehavior : MonoBehaviour
 
         if (!IsClimbing)
             newMoveDir = new Vector3(MoveDirection.x, 0, 0);
+        else
+            newMoveDir = new Vector3(0, MoveDirection.y);
 
         // Set the velocity
         Velocity = newMoveDir * _speed;
