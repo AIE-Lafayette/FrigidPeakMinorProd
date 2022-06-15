@@ -49,6 +49,8 @@ public class SnowballMovementBehavior : MonoBehaviour
             _moveDirection = Vector3.left;
         else if (MovesRight)
             _moveDirection = Vector3.right;
+
+        transform.forward = Vector3.right;
     }
 
     private void Update()
@@ -57,9 +59,7 @@ public class SnowballMovementBehavior : MonoBehaviour
         {        
             Velocity = _moveDirection.normalized * Speed; //Set velocity to the normalized move direction times speed
             transform.position += Velocity * Time.deltaTime; //Increase the position by velocity times delta time
-            transform.forward = Velocity;
-            transform.rotation.SetLookRotation(transform.forward);
-            //transform.Rotate(Velocity);
+            transform.Rotate(Velocity);
         }            
     }
 

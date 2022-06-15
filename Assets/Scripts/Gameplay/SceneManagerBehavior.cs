@@ -29,8 +29,7 @@ public class SceneManagerBehavior : MonoBehaviour
     public void RestartGame()
     {
         GameManagerScript.Reinitialize();
-        Scene currentScene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(currentScene.name);
+        SceneManager.LoadScene("StartScreen");
         Time.timeScale = 1; //Resets the time scale
         InputSystem.settings.updateMode = InputSettings.UpdateMode.ProcessEventsInFixedUpdate; //Resets the update mode.
     }
