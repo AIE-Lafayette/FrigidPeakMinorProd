@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5c17d7fe2e9642b4a8a43ebbd3fa7131
+guid: 98e0bbae502502d4fb5bedae2f7df32a
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Character
-    second: {fileID: 2100000, guid: 2e7fa811525f56e4ea2a82b3e6fad1bb, type: 2}
+      name: SnowBall
+    second: {fileID: 2100000, guid: e1ff04342f2ef3240b98368f220ae2ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Yeti_Textures
+    second: {fileID: 2100000, guid: b718d0b88c7911a49af76695076b711a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -78,14 +83,13 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips:
-  - 91ebc3fa2798aa14dbcdba25afe4d845
-  - 448000b02a980de4f875e6a75663f2c5
-  - de73e46991f67134c9581682b9cb3b3b
-  - d737e618b3250204bb0c4dbff96de277
-  - ab09985c6e062bf4a93442198ef518ee
-  - 1ee8d4f6cbc3a244eb5f9a7f75c47eb6
-  - 929af602dfa6c6243855240ec4e2e1e9
-  - 52b83dabbb1d2ce45b5fe15491f19bfd
+  - f81770be5f3f25d48a6cc7db41116995
+  - 39afd15d622839e4884f454afc5bc27b
+  - fa87458a704269946aff02c2275f7600
+  - d8c74ff55d6c63348919ede8a0055d28
+  - 434988122cb5e0c42a0b9e1843d8115d
+  - a1490d5c9225c17458c6df485d107d89
+  - 60a55c4982cb43c43829aa6ca2cf2712
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
@@ -103,11 +107,11 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 10b3cd05bfd17f643a3338cad106dae4, type: 3}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 2
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   additionalBone: 0
   userData: 
