@@ -22,6 +22,7 @@ public class PlayerDeathBehavior : MonoBehaviour
     private InputDelegateBehavior _inputBehavior;
     [SerializeField]
     private float _pushbackForce = 5.0f;
+    private Vector3 _pushbackDistance;
 
     private void Awake()
     {
@@ -36,7 +37,8 @@ public class PlayerDeathBehavior : MonoBehaviour
     {
         if (collision.gameObject.tag == "snowball" || collision.gameObject.CompareTag("outOfBounds")) //On collision with a snowball
         {
-            _rigidbody.AddForce(-Vector3.forward * _pushbackForce, ForceMode.Impulse);
+            _rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
+            _rigidbody.AddForce(Vector3.back * _pushbackForce, ForceMode.Impulse);
             _onDeath?.Invoke();
             _currentAction = RoutineBehaviour.Instance.StartNewTimedAction(args => SceneManagerBehavior.RestartLevel(), TimedActionCountType.SCALEDTIME, _waitTime);
         }
