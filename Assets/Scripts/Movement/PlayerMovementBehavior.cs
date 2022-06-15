@@ -62,10 +62,11 @@ public class PlayerMovementBehavior : MonoBehaviour
         //if the player is grounded
         if (_isGrounded)
         {
+            _isGrounded = false;
+            //SoundManagerBehavior.PlayClip = true;
             _jumpSource.Play();
             // Add a force to push the player upward.
             _rigidBody.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
-            _isGrounded = false;
         }
     }
 
