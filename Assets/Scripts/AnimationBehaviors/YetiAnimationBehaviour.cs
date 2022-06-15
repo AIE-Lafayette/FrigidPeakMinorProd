@@ -17,8 +17,6 @@ public class YetiAnimationBehaviour : MonoBehaviour
     [SerializeField]
     private Transform _player;
 
-    [SerializeField]
-    private GameObject _leftHand;
     [SerializeField] 
     private GameObject _rightHand;
 
@@ -26,7 +24,6 @@ public class YetiAnimationBehaviour : MonoBehaviour
     {
         _animation = GetComponent<Animator>();
         _snowballMovement = _snowball.GetComponent<SnowballMovementBehavior>();
-        _leftHand.SetActive(false);
         _rightHand.SetActive(false);
     }
 
@@ -57,18 +54,16 @@ public class YetiAnimationBehaviour : MonoBehaviour
         _rightHand.SetActive(false);
     }
 
-    public void SnowballInRightHand() { _leftHand.SetActive(true); }
+    public void SnowballInHand() { _rightHand.SetActive(true); }
 
     public void InstantiateSnowballsLeftHand()
     {
         _snowballMovement.MovesRight = false;
         _snowballMovement.MovesLeft = true;
 
-        Instantiate(_snowball, _leftHand.transform.position, _leftHand.transform.rotation); //Instantiate the snowballs
-        _leftHand.SetActive(false);
+        Instantiate(_snowball, _rightHand.transform.position, _rightHand.transform.rotation); //Instantiate the snowballs
+        _rightHand.SetActive(false);
     }
-    
-    public void SnowballInLeftHand() { _rightHand.SetActive(true); }
 
     
 

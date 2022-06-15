@@ -59,15 +59,15 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.5045454
-        functionName: InstantiateSnowballsRightHand
+      - time: 0
+        functionName: SnowballInHand
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0
-        functionName: SnowballInRightHand
+      - time: 0.86734694
+        functionName: InstantiateSnowballsRightHand
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
