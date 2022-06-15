@@ -218,6 +218,10 @@ PrefabInstance:
       propertyPath: _waitTime
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 776971063661860315, guid: 77471bccf054cf644a5c82fba7a53edf, type: 3}
+      propertyPath: _pushbackForce
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1186651121773677576, guid: 77471bccf054cf644a5c82fba7a53edf, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -228,11 +232,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1186651121773677576, guid: 77471bccf054cf644a5c82fba7a53edf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.305
+      value: -4.72
       objectReference: {fileID: 0}
     - target: {fileID: 1186651121773677576, guid: 77471bccf054cf644a5c82fba7a53edf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.29
+      value: -0.09
       objectReference: {fileID: 0}
     - target: {fileID: 1186651121773677576, guid: 77471bccf054cf644a5c82fba7a53edf, type: 3}
       propertyPath: m_LocalRotation.w
@@ -268,7 +272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1186651121773677578, guid: 77471bccf054cf644a5c82fba7a53edf, type: 3}
       propertyPath: _jumpForce
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1186651121773677579, guid: 77471bccf054cf644a5c82fba7a53edf, type: 3}
       propertyPath: m_Mass
@@ -798,17 +802,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3628896d7fe936448b39cf9113135b82, type: 3}
---- !u!114 &558635088 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2684930755141482601, guid: 3628896d7fe936448b39cf9113135b82, type: 3}
-  m_PrefabInstance: {fileID: 558635087}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea352642d525c864ca0c5ed88515e0d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &573744820
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1266,6 +1259,10 @@ PrefabInstance:
       propertyPath: _winScreen
       value: 
       objectReference: {fileID: 211605731}
+    - target: {fileID: 2894658910112871832, guid: 5aa9e6924a784a64aaf73c571660c292, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a1445577a9b52b948b5d232051a904f2, type: 2}
     - target: {fileID: 3406160577780742116, guid: 5aa9e6924a784a64aaf73c571660c292, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.33763182
@@ -1786,18 +1783,18 @@ PrefabInstance:
     - target: {fileID: 926362492075398191, guid: b479a97744d607a47b97deb3fc5df5cf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 558635088}
+      objectReference: {fileID: 943692194}
     - target: {fileID: 926362492075398191, guid: b479a97744d607a47b97deb3fc5df5cf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 926362492075398191, guid: b479a97744d607a47b97deb3fc5df5cf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RestartGame
+      value: ToMainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 926362492075398191, guid: b479a97744d607a47b97deb3fc5df5cf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SceneManagerBehavior, Assembly-CSharp
+      value: MenuInputBehavior, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 926362492075398191, guid: b479a97744d607a47b97deb3fc5df5cf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
