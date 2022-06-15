@@ -38,6 +38,7 @@ public class SnowballMovementBehavior : MonoBehaviour
 
     private void Awake()
     {
+        Physics.IgnoreLayerCollision(8, 9, true);
         Physics.IgnoreLayerCollision(8, 8, true);
         Physics.IgnoreLayerCollision(8, 7, true);
     }
@@ -54,9 +55,10 @@ public class SnowballMovementBehavior : MonoBehaviour
     {
         if (_isGrounded) //If the snowball is grounded
         {        
-           Velocity = _moveDirection.normalized * Speed; //Set velocity to the normalized move direction times speed
-           transform.position += Velocity * Time.deltaTime; //Increase the position by velocity times delta time
-            transform.rotation.SetLookRotation(Velocity);
+            Velocity = _moveDirection.normalized * Speed; //Set velocity to the normalized move direction times speed
+            transform.position += Velocity * Time.deltaTime; //Increase the position by velocity times delta time
+            Quaternion quaternion = Quaternion.LookRotation(_moveDirection, Vector3.up);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, quaternion, Speed * Time.deltaTime);
         } 
     }
 
