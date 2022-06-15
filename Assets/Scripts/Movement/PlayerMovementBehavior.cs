@@ -19,8 +19,6 @@ public class PlayerMovementBehavior : MonoBehaviour
     //Jumping Vars
     [SerializeField]
     private float _jumpForce = 2.0f;
-    //[SerializeField]
-    //private AudioClip _jumpClip;
     private Vector3 _jumpHeight;
     [SerializeField]
     private bool _isGrounded;
