@@ -7,12 +7,13 @@ public class InvincabilityBehaviour : MonoBehaviour
     /// <summary>
     /// Handles this objects mesh render
     /// </summary>
-    private MeshRenderer _mashRender;
+    [SerializeField]
+    private SkinnedMeshRenderer _mashRender;
     
     /// <summary>
     /// Holds the color of this object 
     /// </summary>
-    private Color _color;
+    private Material _startingMaterial;
 
     /// <summary>
     /// Gets a refrence of the routine behaviour
@@ -25,12 +26,13 @@ public class InvincabilityBehaviour : MonoBehaviour
     [SerializeField]
     private float _invincibleTime = 3f;
 
+    [SerializeField]
+    private Material _goldMaterial;
+
     // Start is called before the first frame update
     void Start()
     {
-        _mashRender = GetComponent<MeshRenderer>();
-
-        _color = _mashRender.material.color;
+        _startingMaterial = _mashRender.material;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -45,8 +47,7 @@ public class InvincabilityBehaviour : MonoBehaviour
     public void GetInvulnerability()
     {
         Physics.IgnoreLayerCollision(6, 8, true);
-        _color.a = .3f;
-        _mashRender.material.color = _color;
+        _mashRender.material = _goldMaterial;
         Debug.Log("Aactive");
 
         _routune = RoutineBehaviour.Instance.StartNewTimedAction(args => RemoveInvulnerability(), TimedActionCountType.SCALEDTIME, 7f);
@@ -59,7 +60,6 @@ public class InvincabilityBehaviour : MonoBehaviour
     {
         Debug.Log("Disactivated");
         Physics.IgnoreLayerCollision(6, 8, false);
-        _color.a = 1;
-        _mashRender.material.color = _color;
+        _mashRender.material = _startingMaterial;
     }
 }
