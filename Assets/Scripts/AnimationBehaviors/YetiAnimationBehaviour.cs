@@ -39,6 +39,7 @@ public class YetiAnimationBehaviour : MonoBehaviour
             _animation.SetBool("ThrowLeft", true);
             
         }
+
         else if (_player.position.x > transform.position.x)
         {
             _animation.SetBool("ThrowLeft", false);
@@ -56,7 +57,7 @@ public class YetiAnimationBehaviour : MonoBehaviour
         _rightHand.SetActive(false);
     }
 
-    public void SnowballInRightHand() { _rightHand.SetActive(true); }
+    public void SnowballInRightHand() { _leftHand.SetActive(true); }
 
     public void InstantiateSnowballsLeftHand()
     {
@@ -67,7 +68,7 @@ public class YetiAnimationBehaviour : MonoBehaviour
         _leftHand.SetActive(false);
     }
     
-    public void SnowballInLeftHand() { _leftHand.SetActive(true); }
+    public void SnowballInLeftHand() { _rightHand.SetActive(true); }
 
     
 
