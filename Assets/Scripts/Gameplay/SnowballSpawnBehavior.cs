@@ -11,6 +11,9 @@ public class SnowballSpawnBehavior : MonoBehaviour
     private float _spawnTime = 0.0f;
     [SerializeField]
     private GameObject _player;
+    private bool _direction = true; //For refrence to where the snowball directing
+
+    public bool Direction { get => _direction; }
 
     private void Update()
     {
@@ -23,11 +26,13 @@ public class SnowballSpawnBehavior : MonoBehaviour
             {
                 spawnedObject.MovesLeft = true;
                 spawnedObject.MovesRight = false;
+                _direction = true;
             }
             else if (_player.transform.position.x > transform.position.x)
             {
                 spawnedObject.MovesLeft = false;
                 spawnedObject.MovesRight = true;
+                _direction = false;
             }
         }
         _spawnTime += Time.deltaTime;
