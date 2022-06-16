@@ -6,6 +6,7 @@ public class RopeBehavior : MonoBehaviour
 {
     [SerializeField]
     private AudioClip _climbSound;
+    [SerializeField]
     private PlayerMovementBehavior _playerMovement;
 
     private void OnTriggerEnter(Collider other)
@@ -13,7 +14,7 @@ public class RopeBehavior : MonoBehaviour
         //if the tag of the collider is the player
         if (other.CompareTag("player"))
         {
-            _playerMovement = other.GetComponent<PlayerMovementBehavior>();
+            //_playerMovement = other.GetComponent<PlayerMovementBehavior>();
             _playerMovement.RopeInRange = true;
             _playerMovement.GetComponent<Rigidbody>().useGravity = false;
         }
@@ -23,7 +24,7 @@ public class RopeBehavior : MonoBehaviour
     {
         if (other.CompareTag("player"))
         {
-            _playerMovement = other.GetComponent<PlayerMovementBehavior>();
+            //_playerMovement = other.GetComponent<PlayerMovementBehavior>();
             _playerMovement.RopeInRange = false;
             _playerMovement.IsClimbing = false;
             _playerMovement.GetComponent<Rigidbody>().useGravity = true;
