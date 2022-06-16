@@ -959,6 +959,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06de89b1141b8344293ef965810ad597, type: 3}
+--- !u!1 &1098480043 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5268826909446153960, guid: 06de89b1141b8344293ef965810ad597, type: 3}
+  m_PrefabInstance: {fileID: 1098480042}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1293999750 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 926564312454040499, guid: b10b632c3a1a1c54aa8c0e31a8e5b493, type: 3}
@@ -1696,6 +1701,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -4.744
       objectReference: {fileID: 0}
+    - target: {fileID: 2027804733691212301, guid: e9ccf97d3b9c3a048b6f47bc7bf1e2ca, type: 3}
+      propertyPath: _winScreen
+      value: 
+      objectReference: {fileID: 1098480043}
     - target: {fileID: 4141651927211786292, guid: e9ccf97d3b9c3a048b6f47bc7bf1e2ca, type: 3}
       propertyPath: m_Name
       value: WinBox
@@ -1862,6 +1871,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -3.244
       objectReference: {fileID: 0}
+    - target: {fileID: 2027804733691212301, guid: e9ccf97d3b9c3a048b6f47bc7bf1e2ca, type: 3}
+      propertyPath: _winScreen
+      value: 
+      objectReference: {fileID: 1098480043}
     - target: {fileID: 4141651927211786292, guid: e9ccf97d3b9c3a048b6f47bc7bf1e2ca, type: 3}
       propertyPath: m_Name
       value: WinBox (1)
