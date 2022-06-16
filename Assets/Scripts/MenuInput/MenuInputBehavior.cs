@@ -21,7 +21,7 @@ public class MenuInputBehavior : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("FirstBuildScene");
+        SceneManager.LoadScene("FinalBuildTestScene");
     }
 
     public void QuitGame()
