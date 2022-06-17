@@ -20,3 +20,4 @@ Frigid Peak is an arcade style platformer. Your goal is to reach the top of the 
 * Mouse Click - Interact with UI buttons
 
 # Known Bugs
+* Pause menu buttons don't work
