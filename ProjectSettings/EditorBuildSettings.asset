@@ -8,8 +8,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StartScreen.unity
     guid: 04bf553bdac20a44d8b62c7cd65fbf44
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FirstBuildScene.unity
     guid: a61c4d9eb96733e4e9115c2960c266ae
+  - enabled: 1
+    path: Assets/Scenes/FinalBuildTestScene.unity
+    guid: f95ff4bd6b2ca2846959a26b5774a54f
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 405f95b0672fe7c469cc0c051485893f, type: 2}
