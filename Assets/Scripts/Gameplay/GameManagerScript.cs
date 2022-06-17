@@ -8,7 +8,8 @@ public enum PlayersLiveState
     DEAD,
     ONELIFE,
     TWOLIVES,
-    THREELIVES
+    THREELIVES,
+    FOURTHLIVES
 }
 
 
@@ -33,10 +34,10 @@ public class GameManagerScript : MonoBehaviour
 
     //private LoadAndSaveScript _saveFile = new LoadAndSaveScript("ScoreBoard.txt");
 
-    static private Highscore _highscore = new Highscore(29032, "ScoreBoard.txt");
+    static private Highscore _highscore = new Highscore(0, "ScoreBoard.txt");
 
 
-    static private PlayersLiveState _currentLives = PlayersLiveState.THREELIVES;
+    static private PlayersLiveState _currentLives = PlayersLiveState.FOURTHLIVES;
     static private int _collectables = 0;
     static private float _currentGameTimer = 0;
     static private float _gameScore = 0;
@@ -132,7 +133,7 @@ public class GameManagerScript : MonoBehaviour
     /// </summary>
     static public void Reinitialize()
     {
-        _currentLives = PlayersLiveState.THREELIVES;
+        _currentLives = PlayersLiveState.FOURTHLIVES;
         _collectables = 0;
         _currentGameTimer = 0;
         _gameScore = 0;
@@ -156,25 +157,27 @@ public class GameManagerScript : MonoBehaviour
     {
         switch (_currentLives)
         {
-            case PlayersLiveState.THREELIVES:
+            case PlayersLiveState.FOURTHLIVES:
                 _life1.enabled = true;
                 _life2.enabled = true;
                 _life3.enabled = true;
                 break;
-            case PlayersLiveState.TWOLIVES:
+            case PlayersLiveState.THREELIVES:
                 _life1.enabled = true;
                 _life2.enabled = true;
                 _life3.enabled = false;
                 break;
-            case PlayersLiveState.ONELIFE:
+            case PlayersLiveState.TWOLIVES:
                 _life1.enabled = true;
                 _life2.enabled = false;
                 _life3.enabled = false;
                 break;
-            case PlayersLiveState.DEAD:
+            case PlayersLiveState.ONELIFE:
                 _life1.enabled = false;
                 _life2.enabled = false;
                 _life3.enabled = false;
+                break;
+            case PlayersLiveState.DEAD:
                 _highscore.Save();
                 _highscore.NewScore((int)_gameScore);
                 _isAlive = false;
