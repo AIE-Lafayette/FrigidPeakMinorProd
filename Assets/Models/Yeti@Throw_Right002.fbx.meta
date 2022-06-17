@@ -66,7 +66,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.86734694
+      - time: 0.9829932
         functionName: InstantiateSnowballsRightHand
         data: 
         objectReferenceParameter: {instanceID: 0}
