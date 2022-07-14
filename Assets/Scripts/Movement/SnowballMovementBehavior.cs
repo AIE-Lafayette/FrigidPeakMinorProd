@@ -11,9 +11,6 @@ public class SnowballMovementBehavior : MonoBehaviour
     private bool _isGrounded;
     [SerializeField]
     private bool _movesLeft;
-    [SerializeField]
-    private bool _movesRight;
-
 
     /// <summary>
     /// The speed the snowball moves
@@ -34,7 +31,6 @@ public class SnowballMovementBehavior : MonoBehaviour
     }
 
     public bool MovesLeft { get => _movesLeft; set => _movesLeft = value; }
-    public bool MovesRight { get => _movesRight; set => _movesRight = value; }
 
     private void Awake()
     {
@@ -47,10 +43,8 @@ public class SnowballMovementBehavior : MonoBehaviour
     {
         if (MovesLeft)
             _moveDirection = Vector3.left;
-        else if (MovesRight)
+        else if (!MovesLeft)
             _moveDirection = Vector3.right;
-
-        transform.forward = Vector3.right;
     }
 
     private void Update()

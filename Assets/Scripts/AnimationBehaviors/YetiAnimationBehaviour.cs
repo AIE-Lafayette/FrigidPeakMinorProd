@@ -46,8 +46,6 @@ public class YetiAnimationBehaviour : MonoBehaviour
 
     public void InstantiateSnowballsRightHand()
     {
-
-        _snowballMovement.MovesRight = true;
         _snowballMovement.MovesLeft = false;
 
         Instantiate(_snowball, _rightHand.transform.position, _rightHand.transform.rotation); //Instantiate the snowballs
@@ -58,7 +56,6 @@ public class YetiAnimationBehaviour : MonoBehaviour
 
     public void InstantiateSnowballsLeftHand()
     {
-        _snowballMovement.MovesRight = false;
         _snowballMovement.MovesLeft = true;
 
         Instantiate(_snowball, _rightHand.transform.position, _rightHand.transform.rotation); //Instantiate the snowballs
