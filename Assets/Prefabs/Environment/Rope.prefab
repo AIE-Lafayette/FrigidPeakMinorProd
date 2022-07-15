@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2399261058297555636}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.01}
-  m_LocalScale: {x: 0.52064, y: 2.5785031, z: 0.53816}
+  m_LocalScale: {x: 0.3, y: 2.5785031, z: 0.3}
   m_Children:
   - {fileID: 322320323007020084}
   m_Father: {fileID: 0}
@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _climbSound: {fileID: 8300000, guid: 9d5d023576d966b43a7e6f01dcc8b7d6, type: 3}
+  _playerMovement: {fileID: 0}
 --- !u!1 &6300061066066485336
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,7 +139,7 @@ Transform:
   m_GameObject: {fileID: 6300061066066485336}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -1.084, z: 1.49}
-  m_LocalScale: {x: 0.099992305, y: 0.0014000371, z: 0.009997027}
+  m_LocalScale: {x: 0.04, y: 0.001, z: 0.1}
   m_Children: []
   m_Father: {fileID: 2399261058297555640}
   m_RootOrder: 0

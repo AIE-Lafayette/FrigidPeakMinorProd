@@ -37,8 +37,9 @@ public class PlayerDeathBehavior : MonoBehaviour
     {
         if (collision.gameObject.tag == "snowball" || collision.gameObject.CompareTag("outOfBounds")) //On collision with a snowball
         {
+            collision.gameObject.SetActive(false);
             _rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
-            _rigidbody.AddForce(Vector3.back * _pushbackForce, ForceMode.Impulse);
+            _rigidbody.AddForce(Vector3.back * _pushbackForce, ForceMode.Force);
             _onDeath?.Invoke();
             _currentAction = RoutineBehaviour.Instance.StartNewTimedAction(args => SceneManagerBehavior.RestartLevel(), TimedActionCountType.SCALEDTIME, _waitTime);
         }

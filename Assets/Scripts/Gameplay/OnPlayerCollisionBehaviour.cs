@@ -22,7 +22,7 @@ public class OnPlayerCollisionBehaviour : MonoBehaviour
             //The game manager will add the points earned to the game manager
             GameManagerScript.IncreaseScore(_pointsWorth);
             //Debug message to let me know if it has collided
-            Debug.LogWarning("Object Collided");
+            Debug.Log("Object Collided");
             //Destroys this game object
             Destroy(gameObject);
         }
