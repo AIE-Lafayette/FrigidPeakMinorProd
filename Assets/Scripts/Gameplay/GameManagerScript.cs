@@ -32,6 +32,8 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField]
     private Image _life3;
 
+
+
     //private LoadAndSaveScript _saveFile = new LoadAndSaveScript("ScoreBoard.txt");
 
     static private Highscore _highscore = new Highscore(0, "ScoreBoard.txt");
