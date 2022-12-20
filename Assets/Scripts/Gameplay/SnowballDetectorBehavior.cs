@@ -16,7 +16,7 @@ public class SnowballDetectorBehavior : MonoBehaviour
         if (other.CompareTag("snowball"))
         {
             if (!_playerMovement.IsGrounded && !_playerMovement.IsClimbing)
-                GameManagerScript.IncreaseScore();
+                GameManagerScript.IncreaseScore(100);
         }
     }
 }

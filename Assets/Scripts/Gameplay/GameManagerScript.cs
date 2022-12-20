@@ -25,6 +25,8 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI _displayHighscore;
 
+    private SkinnedMeshRenderer _polayerSkin;
+
     [SerializeField]
     private Image _life1;
     [SerializeField]
