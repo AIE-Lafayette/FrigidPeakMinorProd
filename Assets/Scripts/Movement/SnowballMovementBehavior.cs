@@ -32,8 +32,6 @@ public class SnowballMovementBehavior : MonoBehaviour
         get { return _velocity; }
         set { _velocity = value; }
     }
-
-    public bool MovesLeft { get => _movesLeft; set => _movesLeft = value; }
     public bool MovesRight { get => _movesRight; set => _movesRight = value; }
 
     private void Awake()
@@ -45,7 +43,7 @@ public class SnowballMovementBehavior : MonoBehaviour
 
     private void Start()
     {
-        if (MovesLeft)
+        if (!MovesRight)
             _moveDirection = Vector3.left;
         else if (MovesRight)
             _moveDirection = Vector3.right;

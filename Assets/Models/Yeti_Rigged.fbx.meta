@@ -80,8 +80,11 @@ ModelImporter:
   referencedClips:
   - f81770be5f3f25d48a6cc7db41116995
   - 39afd15d622839e4884f454afc5bc27b
+  - fa87458a704269946aff02c2275f7600
   - d8c74ff55d6c63348919ede8a0055d28
+  - 434988122cb5e0c42a0b9e1843d8115d
   - a1490d5c9225c17458c6df485d107d89
+  - 60a55c4982cb43c43829aa6ca2cf2712
   importAnimation: 1
   humanDescription:
     serializedVersion: 3

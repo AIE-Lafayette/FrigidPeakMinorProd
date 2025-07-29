@@ -24,14 +24,12 @@ public class SnowballSpawnBehavior : MonoBehaviour
 
             if (_player.transform.position.x < transform.position.x)
             {
-                spawnedObject.MovesLeft = true;
-                spawnedObject.MovesRight = false;
+                spawnedObject.MovesRight = true;
                 _direction = true;
             }
             else if (_player.transform.position.x > transform.position.x)
             {
-                spawnedObject.MovesLeft = false;
-                spawnedObject.MovesRight = true;
+                spawnedObject.MovesRight = false;
                 _direction = false;
             }
         }
